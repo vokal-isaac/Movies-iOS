@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E443D3F81A70640F007C26E3 /* BoxOfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */; };
+		E443D3FA1A70647A007C26E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E443D3F91A70647A007C26E3 /* Default-568h@2x.png */; };
 		E44F2C391A70144D00D22A9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C381A70144D00D22A9A /* main.m */; };
 		E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C3B1A70144D00D22A9A /* AppDelegate.m */; };
-		E44F2C3F1A70144D00D22A9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C3E1A70144D00D22A9A /* ViewController.m */; };
 		E44F2C421A70144D00D22A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C401A70144D00D22A9A /* Main.storyboard */; };
 		E44F2C441A70144D00D22A9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C431A70144D00D22A9A /* Images.xcassets */; };
 		E44F2C471A70144D00D22A9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C451A70144D00D22A9A /* LaunchScreen.xib */; };
@@ -27,13 +28,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeViewController.h; sourceTree = "<group>"; };
+		E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeViewController.m; sourceTree = "<group>"; };
+		E443D3F91A70647A007C26E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E44F2C331A70144C00D22A9A /* MovieChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44F2C371A70144D00D22A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44F2C381A70144D00D22A9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E44F2C3A1A70144D00D22A9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E44F2C3B1A70144D00D22A9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E44F2C3D1A70144D00D22A9A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E44F2C3E1A70144D00D22A9A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E44F2C411A70144D00D22A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E44F2C431A70144D00D22A9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E44F2C461A70144D00D22A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		E44F2C2A1A70144C00D22A9A = {
 			isa = PBXGroup;
 			children = (
+				E443D3F91A70647A007C26E3 /* Default-568h@2x.png */,
 				E44F2C351A70144C00D22A9A /* MovieChecker */,
 				E44F2C4F1A70144D00D22A9A /* MovieCheckerTests */,
 				E44F2C341A70144C00D22A9A /* Products */,
@@ -83,8 +86,8 @@
 			children = (
 				E44F2C3A1A70144D00D22A9A /* AppDelegate.h */,
 				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
-				E44F2C3D1A70144D00D22A9A /* ViewController.h */,
-				E44F2C3E1A70144D00D22A9A /* ViewController.m */,
+				E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */,
+				E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */,
 				E44F2C401A70144D00D22A9A /* Main.storyboard */,
 				E44F2C431A70144D00D22A9A /* Images.xcassets */,
 				E44F2C451A70144D00D22A9A /* LaunchScreen.xib */,
@@ -129,6 +132,7 @@
 				E44F2C2F1A70144C00D22A9A /* Sources */,
 				E44F2C301A70144C00D22A9A /* Frameworks */,
 				E44F2C311A70144C00D22A9A /* Resources */,
+				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
 			);
 			buildRules = (
 			);
@@ -200,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44F2C421A70144D00D22A9A /* Main.storyboard in Resources */,
+				E443D3FA1A70647A007C26E3 /* Default-568h@2x.png in Resources */,
 				E44F2C471A70144D00D22A9A /* LaunchScreen.xib in Resources */,
 				E44F2C441A70144D00D22A9A /* Images.xcassets in Resources */,
 			);
@@ -214,12 +219,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Objective-Clean Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then \n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\" \nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\" \nfi\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E44F2C2F1A70144C00D22A9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44F2C3F1A70144D00D22A9A /* ViewController.m in Sources */,
+				E443D3F81A70640F007C26E3 /* BoxOfficeViewController.m in Sources */,
 				E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */,
 				E44F2C391A70144D00D22A9A /* main.m in Sources */,
 			);
@@ -412,6 +434,7 @@
 				E44F2C581A70144D00D22A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E44F2C591A70144D00D22A9A /* Build configuration list for PBXNativeTarget "MovieCheckerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +443,7 @@
 				E44F2C5B1A70144D00D22A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  BoxOfficeViewController.h
 //  MovieChecker
 //
 //  Created by Joseph Goldberg on 1/21/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface BoxOfficeViewController : UITableViewController
 
 @end
-
