@@ -7,6 +7,8 @@
 //
 
 #import "BoxOfficeViewController.h"
+#import "BoxOfficeCell.h"
+#import "Movie.h"
 
 @interface BoxOfficeViewController ()
 
@@ -18,16 +20,21 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.movies.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    BoxOfficeCell *boxOfficeCell = (BoxOfficeCell *)[tableView dequeueReusableCellWithIdentifier:@"BoxOfficeMovieCell"];
+    Movie *movie = self.movies[indexPath.row];
+    boxOfficeCell.nameLabel.text = movie.name;
+    boxOfficeCell.salesLabel.text = movie.sales;
+    return boxOfficeCell;
 }
 
 @end

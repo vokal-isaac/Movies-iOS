@@ -15,6 +15,8 @@
 		E44F2C441A70144D00D22A9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C431A70144D00D22A9A /* Images.xcassets */; };
 		E44F2C471A70144D00D22A9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C451A70144D00D22A9A /* LaunchScreen.xib */; };
 		E44F2C531A70144D00D22A9A /* MovieCheckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C521A70144D00D22A9A /* MovieCheckerTests.m */; };
+		E46B8A2D1A7158F6001372EE /* BoxOfficeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */; };
+		E46B8A301A715A9E001372EE /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2F1A715A9E001372EE /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		E44F2C4C1A70144D00D22A9A /* MovieCheckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieCheckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44F2C511A70144D00D22A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44F2C521A70144D00D22A9A /* MovieCheckerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCheckerTests.m; sourceTree = "<group>"; };
+		E46B8A2B1A7158F6001372EE /* BoxOfficeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeCell.h; sourceTree = "<group>"; };
+		E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeCell.m; sourceTree = "<group>"; };
+		E46B8A2E1A715A9E001372EE /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		E46B8A2F1A715A9E001372EE /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,10 @@
 				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
 				E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */,
 				E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */,
+				E46B8A2B1A7158F6001372EE /* BoxOfficeCell.h */,
+				E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */,
+				E46B8A2E1A715A9E001372EE /* Movie.h */,
+				E46B8A2F1A715A9E001372EE /* Movie.m */,
 				E44F2C401A70144D00D22A9A /* Main.storyboard */,
 				E44F2C431A70144D00D22A9A /* Images.xcassets */,
 				E44F2C451A70144D00D22A9A /* LaunchScreen.xib */,
@@ -243,7 +253,9 @@
 			files = (
 				E443D3F81A70640F007C26E3 /* BoxOfficeViewController.m in Sources */,
 				E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */,
+				E46B8A301A715A9E001372EE /* Movie.m in Sources */,
 				E44F2C391A70144D00D22A9A /* main.m in Sources */,
+				E46B8A2D1A7158F6001372EE /* BoxOfficeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

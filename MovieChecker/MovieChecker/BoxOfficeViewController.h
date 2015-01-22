@@ -10,4 +10,6 @@
 
 @interface BoxOfficeViewController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *movies;
+
 @end
