@@ -12,5 +12,8 @@
 
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *sales;
+@property (nonatomic, copy) NSString *imagePath;
+@property (nonatomic, copy) NSString *urlPath;
 
+- (Movie *)initWithTitle:(NSString *)name sales:(NSString *)sales imagePath:(NSString *)imagePath urlPath:(NSString *)urlPath;
 @end

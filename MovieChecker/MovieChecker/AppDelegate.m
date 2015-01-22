@@ -26,11 +26,13 @@
     Movie *movie = [[Movie alloc] init];
     movie.name = @"Example Hit";
     movie.sales = @"$500 Million";
+    movie.imagePath = @"hit.jpg";
     [_movies addObject:movie];
     
     movie = [[Movie alloc] init];
     movie.name = @"Example Bomb";
     movie.sales = @"$500 Thousand";
+    movie.imagePath = @"bomb.jpg";
     [_movies addObject:movie];
     
     UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;

@@ -17,6 +17,10 @@
 		E44F2C531A70144D00D22A9A /* MovieCheckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C521A70144D00D22A9A /* MovieCheckerTests.m */; };
 		E46B8A2D1A7158F6001372EE /* BoxOfficeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */; };
 		E46B8A301A715A9E001372EE /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2F1A715A9E001372EE /* Movie.m */; };
+		E46B8A331A715F51001372EE /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A321A715F51001372EE /* MovieDetailViewController.m */; };
+		E46B8A371A7162D7001372EE /* bomb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46B8A351A7162D7001372EE /* bomb.jpg */; };
+		E46B8A381A7162D7001372EE /* hit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E46B8A361A7162D7001372EE /* hit.jpg */; };
+		E46B8A3B1A716AC7001372EE /* RottenTomatoes.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A3A1A716AC7001372EE /* RottenTomatoes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,12 @@
 		E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeCell.m; sourceTree = "<group>"; };
 		E46B8A2E1A715A9E001372EE /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		E46B8A2F1A715A9E001372EE /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		E46B8A311A715F51001372EE /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
+		E46B8A321A715F51001372EE /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
+		E46B8A351A7162D7001372EE /* bomb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bomb.jpg; sourceTree = "<group>"; };
+		E46B8A361A7162D7001372EE /* hit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hit.jpg; sourceTree = "<group>"; };
+		E46B8A391A716AC7001372EE /* RottenTomatoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RottenTomatoes.h; sourceTree = "<group>"; };
+		E46B8A3A1A716AC7001372EE /* RottenTomatoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoes.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +100,13 @@
 		E44F2C351A70144C00D22A9A /* MovieChecker */ = {
 			isa = PBXGroup;
 			children = (
+				E46B8A3C1A716AD4001372EE /* Rotten Tomatoes API Interaction */,
 				E44F2C3A1A70144D00D22A9A /* AppDelegate.h */,
 				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
 				E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */,
 				E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */,
+				E46B8A311A715F51001372EE /* MovieDetailViewController.h */,
+				E46B8A321A715F51001372EE /* MovieDetailViewController.m */,
 				E46B8A2B1A7158F6001372EE /* BoxOfficeCell.h */,
 				E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */,
 				E46B8A2E1A715A9E001372EE /* Movie.h */,
@@ -102,6 +115,7 @@
 				E44F2C431A70144D00D22A9A /* Images.xcassets */,
 				E44F2C451A70144D00D22A9A /* LaunchScreen.xib */,
 				E44F2C361A70144D00D22A9A /* Supporting Files */,
+				E46B8A341A7162D7001372EE /* Images */,
 			);
 			path = MovieChecker;
 			sourceTree = "<group>";
@@ -130,6 +144,24 @@
 				E44F2C511A70144D00D22A9A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E46B8A341A7162D7001372EE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E46B8A351A7162D7001372EE /* bomb.jpg */,
+				E46B8A361A7162D7001372EE /* hit.jpg */,
+			);
+			path = Images;
+			sourceTree = SOURCE_ROOT;
+		};
+		E46B8A3C1A716AD4001372EE /* Rotten Tomatoes API Interaction */ = {
+			isa = PBXGroup;
+			children = (
+				E46B8A391A716AC7001372EE /* RottenTomatoes.h */,
+				E46B8A3A1A716AC7001372EE /* RottenTomatoes.m */,
+			);
+			name = "Rotten Tomatoes API Interaction";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44F2C421A70144D00D22A9A /* Main.storyboard in Resources */,
+				E46B8A371A7162D7001372EE /* bomb.jpg in Resources */,
 				E443D3FA1A70647A007C26E3 /* Default-568h@2x.png in Resources */,
+				E46B8A381A7162D7001372EE /* hit.jpg in Resources */,
 				E44F2C471A70144D00D22A9A /* LaunchScreen.xib in Resources */,
 				E44F2C441A70144D00D22A9A /* Images.xcassets in Resources */,
 			);
@@ -251,6 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E46B8A3B1A716AC7001372EE /* RottenTomatoes.m in Sources */,
+				E46B8A331A715F51001372EE /* MovieDetailViewController.m in Sources */,
 				E443D3F81A70640F007C26E3 /* BoxOfficeViewController.m in Sources */,
 				E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */,
 				E46B8A301A715A9E001372EE /* Movie.m in Sources */,
