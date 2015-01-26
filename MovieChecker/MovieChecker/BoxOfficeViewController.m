@@ -81,7 +81,7 @@
 
 - (void)imageForImageURL:(NSString *)imagePath forCell:(UITableViewCell *)cell atRow:(NSInteger)row
 {
-//    NSURL *url = [NSURL URLWithString:imagePath];
+    NSURL *url = [NSURL URLWithString:imagePath];
 //    UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
 //    if (cell.tag == row) {
 //        DLOG(@"Changing Image");
