@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
 
 @interface MovieDetailViewController : UITableViewController
+
+@property (nonatomic, weak) Movie *movie;
+
+@property (nonatomic, weak) IBOutlet UILabel *movieTitle;
+@property (nonatomic, weak) IBOutlet UILabel *rating;
+@property (weak, nonatomic) IBOutlet UILabel *synopsis;
+@property (weak, nonatomic) IBOutlet UILabel *year;
 
 @end

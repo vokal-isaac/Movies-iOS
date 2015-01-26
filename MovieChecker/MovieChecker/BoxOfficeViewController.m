@@ -10,7 +10,7 @@
 #import "BoxOfficeCell.h"
 #import "Movie.h"
 #import "RottenTomatoes.h"
-
+#import "MovieDetailViewController.h"
 // Define DLOG to log to NSLog when DEBUG is defined
 #ifdef DEBUG
 #define DLOG(...) NSLog(@"%s:%d %@", __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
@@ -71,9 +71,12 @@
         // TODO: Fix placeholders
         
         movie = [[Movie alloc] initWithTitle:movieData[@"title"]
-                                       sales:@"Placeholder Number"
                                    imagePath:movieData[@"posters"][@"thumbnail"]
                                      urlPath:movieData[@"links"][@"self"]];
+        movie.rating = movieData[@"mpaa_rating"];
+        movie.synopsis = movieData[@"synopsis"];
+        movie.year = [movieData[@"year"] intValue];
+        movie.runtime = [movieData[@"runtime"] intValue];
         [self.movies addObject:movie];
     }
     [self.tableView reloadData];
@@ -93,16 +96,9 @@
                                                                movie.image = downloadedImage;
                                                                dispatch_async(dispatch_get_main_queue(), ^{
                                                                    if (cell.tag == indexPath.row) {
-                                                                       DLOG(@"Changing Image");
                                                                        cell.thumbnailImageView.image = movie.image;
-                                                                       //[cell setNeedsLayout];
-                                                                       //[self.tableView beginUpdates];
-                                                                       //[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
-                                                                       //[self.tableView endUpdates];
-                                                                       //[cell reloadInputViews];
                                                                    }
                                                                });
-                                                               //[self.tableView reloadData];
                                                            } else {
                                                                // TODO: Handle the bad status code!
                                                            }
@@ -128,17 +124,25 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // TODO: Fix Image Loading to not be laggy.
-    DLOG(@"cellForRowAtIndexPath");
     BoxOfficeCell *boxOfficeCell = (BoxOfficeCell *)[tableView dequeueReusableCellWithIdentifier:@"BoxOfficeMovieCell" forIndexPath:indexPath];
     boxOfficeCell.tag = indexPath.row;
     Movie *movie = self.movies[indexPath.row];
     boxOfficeCell.nameLabel.text = movie.name;
-    boxOfficeCell.salesLabel.text = movie.sales;
     boxOfficeCell.thumbnailImageView.image = nil;
     [self imageForMovie:movie forCell:boxOfficeCell atIndexPath:indexPath];
         
     
     return boxOfficeCell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"MovieDetails"]) {
+        Movie *movie = self.movies[[self.tableView indexPathForSelectedRow].row];
+        MovieDetailViewController *detailViewController = segue.destinationViewController;
+        [detailViewController setMovie:movie];
+    }
+    
 }
 
 @end
