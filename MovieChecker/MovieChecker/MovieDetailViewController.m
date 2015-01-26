@@ -17,6 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = self.movie.name;
     self.movieTitle.text = self.movie.name;
     self.year.text = [NSString stringWithFormat:@"%ld", (long)self.movie.year];
     self.rating.text = self.movie.rating;
