@@ -11,7 +11,7 @@
 static NSString *apiKey = @"jw64knjg769gnmd2zs35ttz6";
 static NSString *homeUrlRoot = @"http://api.rottentomatoes.com/api/public/v1.0.json?apikey=";
 static NSString *baseURL = @"http://api.rottentomatoes.com/api/public/v1.0/";
-static NSString *boxOfficeURL = @"lists/movies/box_office.json";
+static NSString *boxOfficeURL = @"lists/movies/box_office.json?limit=30";
 
 @implementation RottenTomatoes
 
@@ -24,7 +24,7 @@ static NSString *boxOfficeURL = @"lists/movies/box_office.json";
 + (NSURL *)boxOfficeURL
 {
     // TODO: Does this need to be cleaned up?
-    NSString *url = [[NSString stringWithString:baseURL] stringByAppendingFormat:@"%@?apikey=%@", boxOfficeURL,apiKey];
+    NSString *url = [[NSString stringWithString:baseURL] stringByAppendingFormat:@"%@&apikey=%@", boxOfficeURL,apiKey];
     return [NSURL URLWithString:url];
 }
 
@@ -36,7 +36,7 @@ static NSString *boxOfficeURL = @"lists/movies/box_office.json";
 + (NSArray *)arrayFromData:(NSData *)data withKey:(NSString *)key
 {
     NSError *jsonError;
-    NSDictionary* jsonData = [NSJSONSerialization JSONObjectWithData:data
+    NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data
                                                              options:NSJSONReadingAllowFragments
                                                                error:&jsonError];
     if (!jsonError) {

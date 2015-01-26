@@ -14,6 +14,7 @@
 {
     self = [super init];
     if (self) {
+        self.imageLoaded = NO;
         self.name = name;
         self.sales = sales;
         self.imagePath = imagePath;
