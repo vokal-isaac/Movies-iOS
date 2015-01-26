@@ -79,28 +79,27 @@
     [self.tableView reloadData];
 }
 
-- (void)imageForImageURL:(NSString *)imagePath forCell:(UITableViewCell *)cell atRow:(NSInteger)row
+- (void)imageForMovie:(Movie *)movie forCell:(BoxOfficeCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *url = [NSURL URLWithString:imagePath];
-//    UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-//    if (cell.tag == row) {
-//        DLOG(@"Changing Image");
-//        cell.imageView.image = downloadedImage;
-//        [cell setNeedsDisplay];
-//    }
-    NSURLSessionDownloadTask *downloadImageTask = [[NSURLSession sharedSession]
-                                                   downloadTaskWithURL:url
-                                                   completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
+    NSURL *url = [NSURL URLWithString:movie.imagePath];
+    NSURLSessionDataTask *downloadImageTask = [[NSURLSession sharedSession]
+                                                   dataTaskWithURL:url
+                                                   completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                                        if (!error) {
                                                            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
                                                            if (httpResp.statusCode == 200) {
-                                                               UIImage *downloadedImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
+                                                               UIImage *downloadedImage = [[UIImage alloc] initWithData:data];
                                                                //DLOG(@"");
+                                                               movie.image = downloadedImage;
                                                                dispatch_async(dispatch_get_main_queue(), ^{
-                                                                   if (cell.tag == row) {
+                                                                   if (cell.tag == indexPath.row) {
                                                                        DLOG(@"Changing Image");
-                                                                       cell.imageView.image = downloadedImage;
-                                                                       [cell setNeedsDisplay];
+                                                                       cell.thumbnailImageView.image = movie.image;
+                                                                       //[cell setNeedsLayout];
+                                                                       //[self.tableView beginUpdates];
+                                                                       //[self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+                                                                       //[self.tableView endUpdates];
+                                                                       //[cell reloadInputViews];
                                                                    }
                                                                });
                                                                //[self.tableView reloadData];
@@ -128,15 +127,15 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO: Fix Image Loading
+    // TODO: Fix Image Loading to not be laggy.
     DLOG(@"cellForRowAtIndexPath");
     BoxOfficeCell *boxOfficeCell = (BoxOfficeCell *)[tableView dequeueReusableCellWithIdentifier:@"BoxOfficeMovieCell" forIndexPath:indexPath];
     boxOfficeCell.tag = indexPath.row;
     Movie *movie = self.movies[indexPath.row];
     boxOfficeCell.nameLabel.text = movie.name;
     boxOfficeCell.salesLabel.text = movie.sales;
-    boxOfficeCell.imageView.image = nil;
-    [self imageForImageURL:movie.imagePath forCell:boxOfficeCell atRow:indexPath.row];
+    boxOfficeCell.thumbnailImageView.image = nil;
+    [self imageForMovie:movie forCell:boxOfficeCell atIndexPath:indexPath];
         
     
     return boxOfficeCell;

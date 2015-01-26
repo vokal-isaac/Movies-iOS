@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Movie : NSObject
 
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *sales;
-@property (nonatomic, copy) NSString *imagePath;
-@property (nonatomic, copy) NSString *urlPath;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *sales;
+@property (nonatomic, strong) NSString *imagePath;
+@property (nonatomic, strong) NSString *urlPath;
 @property (nonatomic, assign) BOOL imageLoaded;
+@property (nonatomic, strong) UIImage *image;
 
 - (Movie *)initWithTitle:(NSString *)name sales:(NSString *)sales imagePath:(NSString *)imagePath urlPath:(NSString *)urlPath;
 
