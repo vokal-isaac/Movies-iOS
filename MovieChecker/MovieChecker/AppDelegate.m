@@ -16,17 +16,16 @@
 
 @implementation AppDelegate
 {
-    NSMutableArray *_movies;
+    //NSMutableArray *_movies;
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    _movies = [NSMutableArray array];
+    //_movies = [NSMutableArray array];
     
-    
-    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
-    BoxOfficeViewController *boxOfficeViewController = navigationController.viewControllers.firstObject;
-    boxOfficeViewController.movies = _movies;
+    //UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+    //BoxOfficeViewController *boxOfficeViewController = navigationController.viewControllers.firstObject;
+    //boxOfficeViewController.movies = _movies;
     
     return YES;
 }

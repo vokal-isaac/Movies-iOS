@@ -9,7 +9,7 @@
 #import "BoxOfficeViewController.h"
 #import "BoxOfficeCell.h"
 #import "Movie.h"
-#import "RottenTomatoes.h"
+#import "RottenTomatoesHelperMethods.h"
 #import "MovieDetailViewController.h"
 // Define DLOG to log to NSLog when DEBUG is defined
 #ifdef DEBUG
@@ -45,14 +45,14 @@
 
 - (void)moviesOnRottenTomatoes
 {
-    NSURL *url = [RottenTomatoes boxOfficeURL];
+    NSURL *url = [RottenTomatoesHelperMethods boxOfficeURL];
     NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data,
                                                                                            NSURLResponse *response,
                                                                                            NSError *error) {
         if (!error) {
             NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
             if (httpResp.statusCode == 200) {
-                [self interpretBoxOfficeMoviesFromArray:[RottenTomatoes arrayFromData:data withKey:@"movies"]];
+                [self interpretBoxOfficeMoviesFromArray:[RottenTomatoesHelperMethods arrayFromData:data withKey:@"movies"]];
             } else {
                 // TODO: Handle bad status code!
             }

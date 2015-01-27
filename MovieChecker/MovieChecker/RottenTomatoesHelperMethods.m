@@ -1,19 +1,19 @@
 //
-//  RottenTomatoes.m
+//  RottenTomatoesHelperMethods.m
 //  MovieChecker
 //
 //  Created by Joseph Goldberg on 1/22/15.
 //  Copyright (c) 2015 Vokal. All rights reserved.
 //
 
-#import "RottenTomatoes.h"
+#import "RottenTomatoesHelperMethods.h"
 
 static NSString *apiKey = @"jw64knjg769gnmd2zs35ttz6";
 static NSString *homeUrlRoot = @"http://api.rottentomatoes.com/api/public/v1.0.json?apikey=";
 static NSString *baseURL = @"http://api.rottentomatoes.com/api/public/v1.0/";
 static NSString *boxOfficeURL = @"lists/movies/box_office.json?limit=50";
 
-@implementation RottenTomatoes
+@implementation RottenTomatoesHelperMethods
 
 + (NSURL *)appRootURL
 {

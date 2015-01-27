@@ -1,5 +1,5 @@
 //
-//  RottenTomatoes.h
+//  RottenTomatoesHelperMethods.h
 //  MovieChecker
 //
 //  Created by Joseph Goldberg on 1/22/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RottenTomatoes : NSObject
+@interface RottenTomatoesHelperMethods : NSObject
 
 + (NSURL *)appRootURL;
 + (NSString *)apiKey;
