@@ -72,7 +72,7 @@ static NSString *const reuseIdentifier = @"BoxOfficeCollectionCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    BoxOfficeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    BoxOfficeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionViewCell class]) forIndexPath:indexPath];
     
     // Configure the cell
     Movie *movie = self.movies[indexPath.row];

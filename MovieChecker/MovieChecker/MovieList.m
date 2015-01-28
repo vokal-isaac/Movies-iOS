@@ -39,9 +39,9 @@
     }
     NSLog(@"Messaging Delegate");
 
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [self.delegate synchMoviesWithArray:self.movies];
-    });
+    }];
 }
 
 - (void)fetchMovies
@@ -78,9 +78,6 @@
                                                        if (httpResp.statusCode == 200) {
                                                            UIImage *downloadedImage = [[UIImage alloc] initWithData:data];
                                                            movie.image = downloadedImage;
-                                                           dispatch_async(dispatch_get_main_queue(), ^{
-                                                               //[self.delegate sy]
-                                                           });
                                                        } else {
                                                            // TODO: Handle the bad status code!
                                                        }

@@ -8,29 +8,21 @@
 
 #import "RottenTomatoesHelperMethods.h"
 
-static NSString *apiKey = @"jw64knjg769gnmd2zs35ttz6";
-static NSString *homeUrlRoot = @"http://api.rottentomatoes.com/api/public/v1.0.json?apikey=";
-static NSString *baseURL = @"http://api.rottentomatoes.com/api/public/v1.0/";
-static NSString *boxOfficeURL = @"lists/movies/box_office.json?limit=50";
+static NSString *APIKeyString = @"jw64knjg769gnmd2zs35ttz6";
+static NSString *BaseURL = @"http://api.rottentomatoes.com/api/public/v1.0/";
+static NSString *BoxOfficeURL = @"lists/movies/box_office.json?limit=50";
 
 @implementation RottenTomatoesHelperMethods
 
-+ (NSURL *)appRootURL
-{
-    NSString *url = [[NSString stringWithString:homeUrlRoot] stringByAppendingString:apiKey];
-    return [NSURL URLWithString:url];
-}
-
 + (NSURL *)boxOfficeURL
 {
-    // TODO: Does this need to be cleaned up?
-    NSString *url = [[NSString stringWithString:baseURL] stringByAppendingFormat:@"%@&apikey=%@", boxOfficeURL,apiKey];
+//    NSURL *url = [NSURL URLWithString:BoxOfficeURL relativeToURL:[NSURL URLWithString:BaseURL]];
+//    url = [NSURL URLWithString:@"&apikey=" relativeToURL:url];
+//    url = [NSURL URLWithString:APIKeyString relativeToURL:url];
+//    NSLog(@"URL=%@", url);
+//    return url;
+    NSString *url = [[NSString stringWithString:BaseURL] stringByAppendingFormat:@"%@&apikey=%@", BoxOfficeURL, APIKeyString];
     return [NSURL URLWithString:url];
-}
-
-+ (NSString *)apiKey
-{
-    return apiKey;
 }
 
 + (NSArray *)arrayFromData:(NSData *)data withKey:(NSString *)key
@@ -39,12 +31,11 @@ static NSString *boxOfficeURL = @"lists/movies/box_office.json?limit=50";
     NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data
                                                              options:NSJSONReadingAllowFragments
                                                                error:&jsonError];
-    if (!jsonError) {
-        return jsonData[key];
-    } else {
-        // TODO: Handle error!
+    if (!jsonData) {
+        // TODO: Handle error by examining jsonError.
         return nil;
     }
+    return jsonData[key];
 }
 
 @end

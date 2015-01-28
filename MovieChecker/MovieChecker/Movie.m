@@ -10,16 +10,15 @@
 
 @implementation Movie
 
-- (Movie *)initWithTitle:(NSString *)name imagePath:(NSString *)imagePath urlPath:(NSString *)urlPath;
+- (Movie *)initWithTitle:(NSString *)name
+               imagePath:(NSString *)imagePath
+                 urlPath:(NSString *)urlPath;
 {
     self = [super init];
     if (self) {
-        self.imageLoaded = NO;
         self.name = name;
         self.imagePath = imagePath;
         self.urlPath = urlPath;
-    } else {
-        // TODO: Handle Error?
     }
     return self;
 }

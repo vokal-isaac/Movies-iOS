@@ -10,8 +10,6 @@
 
 @interface RottenTomatoesHelperMethods : NSObject
 
-+ (NSURL *)appRootURL;
-+ (NSString *)apiKey;
 + (NSURL *)boxOfficeURL;
 + (NSArray *)arrayFromData:(NSData *)data withKey:(NSString *)key;
 
