@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		D453156FA8BB6BB07A1CAC22 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99D0354B8EB90120C9FBA5E /* libPods.a */; };
-		E443D3F81A70640F007C26E3 /* BoxOfficeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */; };
 		E443D3FA1A70647A007C26E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E443D3F91A70647A007C26E3 /* Default-568h@2x.png */; };
 		E44F2C391A70144D00D22A9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C381A70144D00D22A9A /* main.m */; };
 		E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C3B1A70144D00D22A9A /* AppDelegate.m */; };
@@ -37,8 +36,6 @@
 /* Begin PBXFileReference section */
 		8C992A5BFC83A9348BC0B44B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A99D0354B8EB90120C9FBA5E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeViewController.h; sourceTree = "<group>"; };
-		E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeViewController.m; sourceTree = "<group>"; };
 		E443D3F91A70647A007C26E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E44F2C331A70144C00D22A9A /* MovieChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44F2C371A70144D00D22A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,8 +105,6 @@
 			children = (
 				E4D25EB71A77FB5700C21065 /* BoxOfficeCollectionViewController.h */,
 				E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */,
-				E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */,
-				E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */,
 				E46B8A311A715F51001372EE /* MovieDetailViewController.h */,
 				E46B8A321A715F51001372EE /* MovieDetailViewController.m */,
 			);
@@ -370,7 +365,6 @@
 			files = (
 				E46B8A3B1A716AC7001372EE /* RottenTomatoesHelperMethods.m in Sources */,
 				E46B8A331A715F51001372EE /* MovieDetailViewController.m in Sources */,
-				E443D3F81A70640F007C26E3 /* BoxOfficeViewController.m in Sources */,
 				E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */,
 				E46B8A301A715A9E001372EE /* Movie.m in Sources */,
 				E44F2C391A70144D00D22A9A /* main.m in Sources */,

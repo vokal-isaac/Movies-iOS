@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "Movie.h"
-#import "BoxOfficeViewController.h"
 
 @implementation AppDelegate
 

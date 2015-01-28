@@ -54,22 +54,60 @@
                                     <segue destination="qWC-tS-OJK" kind="push" identifier="MovieDetails" id="Sks-cU-Ran"/>
                                 </connections>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BoxOfficeCell" id="B2u-uy-onl" customClass="BoxOfficeCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="266" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ye4-dS-p2H">
+                                            <rect key="frame" x="8" y="10" width="54" height="80"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="54" id="Oy1-cb-MdB"/>
+                                                <constraint firstAttribute="height" constant="80" id="du3-Bw-iNc"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzU-3o-7cq">
+                                            <rect key="frame" x="73" y="39" width="151" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="kzU-3o-7cq" secondAttribute="centerY" constant="0.5" id="57C-mK-Odf"/>
+                                    <constraint firstItem="Ye4-dS-p2H" firstAttribute="leading" secondItem="B2u-uy-onl" secondAttribute="leadingMargin" id="6cN-gL-RdE"/>
+                                    <constraint firstAttribute="centerY" secondItem="Ye4-dS-p2H" secondAttribute="centerY" id="Cs0-5d-2Cq"/>
+                                    <constraint firstItem="kzU-3o-7cq" firstAttribute="leading" secondItem="Ye4-dS-p2H" secondAttribute="trailing" constant="11" id="Gur-AH-dIb"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="kzU-3o-7cq" secondAttribute="trailing" constant="34" id="IeO-No-6Z8"/>
+                                </constraints>
+                                <size key="customSize" width="266" height="100"/>
+                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="KEq-yR-EGT" id="bdi-Ne-mbL"/>
                             <outlet property="delegate" destination="KEq-yR-EGT" id="i2n-5a-r9S"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Box Office Movies" id="5Gd-3l-ulj"/>
+                    <navigationItem key="navigationItem" title="Box Office Movies" id="5Gd-3l-ulj">
+                        <barButtonItem key="rightBarButtonItem" title="Change Layout" style="plain" id="UKf-k3-9z9">
+                            <connections>
+                                <action selector="toggleLayout:" destination="KEq-yR-EGT" id="8NF-Fz-5MP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSM-XM-Xpf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="313" y="410"/>
+            <point key="canvasLocation" x="333" y="410"/>
         </scene>
         <!--Box Office Movies-->
         <scene sceneID="fsf-GM-552">
             <objects>
-                <tableViewController storyboardIdentifier="TableView" id="IsU-ED-e6x" customClass="BoxOfficeViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableView" id="IsU-ED-e6x" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="X0g-El-mbQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,7 +132,6 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="yMH-Pl-9ZB" id="59f-sA-z6f"/>
                                     <outlet property="thumbnailImageView" destination="SZY-Gi-OyJ" id="kVl-Fh-K40"/>
-                                    <segue destination="qWC-tS-OJK" kind="push" identifier="MovieDetails" id="UEk-qK-ffG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -242,23 +279,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtb-0P-caw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="765" y="55"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6y1-2Z-zK7">
-            <objects>
-                <navigationController storyboardIdentifier="TableNavigationView" id="WKn-x7-Ytk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p6V-bl-esF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="IsU-ED-e6x" kind="relationship" relationship="rootViewController" id="NxO-8R-9zt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BSW-1W-M4i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-205" y="-275"/>
+            <point key="canvasLocation" x="749" y="410"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -266,7 +287,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="Sks-cU-Ran"/>
-    </inferredMetricsTieBreakers>
 </document>

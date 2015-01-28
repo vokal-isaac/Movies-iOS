@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BoxOfficeCell : UITableViewCell
+@interface BoxOfficeCell : UICollectionViewCell
 
 - (void)setThumbnailImage:(UIImage *)image;
 - (void)setName:(NSString *)name;
