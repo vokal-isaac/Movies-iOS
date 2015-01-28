@@ -8,7 +8,7 @@
         <!--Navigation Controller-->
         <scene sceneID="a2T-Qe-KkP">
             <objects>
-                <navigationController id="9Jc-Kz-GZ8" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CollectionNavigationView" id="9Jc-Kz-GZ8" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mXc-YD-rkk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -24,7 +24,7 @@
         <!--Box Office Movies-->
         <scene sceneID="6No-5z-Cyd">
             <objects>
-                <collectionViewController id="KEq-yR-EGT" customClass="BoxOfficeCollectionViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CollectionView" id="KEq-yR-EGT" customClass="BoxOfficeCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8f8-7x-Uiu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,7 +69,7 @@
         <!--Box Office Movies-->
         <scene sceneID="fsf-GM-552">
             <objects>
-                <tableViewController id="IsU-ED-e6x" customClass="BoxOfficeViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TableView" id="IsU-ED-e6x" customClass="BoxOfficeViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" id="X0g-El-mbQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -247,7 +247,7 @@
         <!--Navigation Controller-->
         <scene sceneID="6y1-2Z-zK7">
             <objects>
-                <navigationController id="WKn-x7-Ytk" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TableNavigationView" id="WKn-x7-Ytk" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p6V-bl-esF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

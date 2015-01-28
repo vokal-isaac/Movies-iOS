@@ -10,6 +10,6 @@
 
 @interface BoxOfficeCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
+- (void)setThumbnailImageFromURL:(NSURL *)url;
 
 @end

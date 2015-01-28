@@ -11,6 +11,6 @@
 @interface RottenTomatoesHelperMethods : NSObject
 
 + (NSURL *)boxOfficeURL;
-+ (NSArray *)arrayFromData:(NSData *)data withKey:(NSString *)key;
++ (NSArray *)interpretBoxOfficeMoviesFromData:(NSData *)data withkey:(NSString *)key;
 
 @end

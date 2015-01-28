@@ -1,3 +1,2 @@
 source 'https://github.com/CocoaPods/Specs.git'
-pod 'ObjectiveSugar', '~> 0.5'
 pod 'SDWebImage', '~> 3.7'

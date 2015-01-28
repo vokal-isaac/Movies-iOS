@@ -13,9 +13,4 @@
 
 @property (nonatomic, weak) Movie *movie;
 
-@property (nonatomic, weak) IBOutlet UILabel *movieTitle;
-@property (nonatomic, weak) IBOutlet UILabel *rating;
-@property (nonatomic, weak) IBOutlet UILabel *synopsis;
-@property (nonatomic, weak) IBOutlet UILabel *year;
-
 @end

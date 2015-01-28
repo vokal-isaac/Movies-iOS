@@ -10,6 +10,11 @@
 
 @interface MovieDetailViewController ()
 
+@property (nonatomic, weak) IBOutlet UILabel *movieTitle;
+@property (nonatomic, weak) IBOutlet UILabel *rating;
+@property (nonatomic, weak) IBOutlet UILabel *synopsis;
+@property (nonatomic, weak) IBOutlet UILabel *year;
+
 @end
 
 @implementation MovieDetailViewController
@@ -21,7 +26,6 @@
     self.movieTitle.text = self.movie.name;
     self.year.text = [@(self.movie.year) description];
     self.rating.text = self.movie.rating;
-    
     self.synopsis.numberOfLines = 0;
     self.synopsis.text = self.movie.synopsis;
     [self.synopsis sizeToFit];

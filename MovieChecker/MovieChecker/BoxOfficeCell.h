@@ -10,8 +10,7 @@
 
 @interface BoxOfficeCell : UITableViewCell
 
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UILabel *salesLabel;
-@property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
+- (void)setThumbnailImage:(UIImage *)image;
+- (void)setName:(NSString *)name;
 
 @end

@@ -10,13 +10,13 @@
 
 @protocol MovieListDelegate <NSObject>
 
-- (void)synchMoviesWithArray:(NSMutableArray *)movies;
+- (void)synchMoviesWithArray:(NSArray *)movies;
 
 @end
 
 @interface MovieList : NSObject
 
-@property (nonatomic, strong) NSMutableArray *movies;
+@property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, weak) id <MovieListDelegate> delegate;
 
 - (id)initWithDelegate:(id)delegate;

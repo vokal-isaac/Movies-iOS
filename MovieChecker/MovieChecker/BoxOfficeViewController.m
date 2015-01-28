@@ -22,7 +22,7 @@
 @interface BoxOfficeViewController ()
 
 @property (nonatomic, strong) NSURLSession *session;
-@property (nonatomic, strong) NSMutableArray *movies;
+@property (nonatomic, strong) NSArray *movies;
 
 @end
 
@@ -52,28 +52,10 @@
             // TODO: Handle bad status code!
             return;
         }
-        [self interpretBoxOfficeMoviesFromArray:[RottenTomatoesHelperMethods arrayFromData:data withKey:@"movies"]];
+        self.movies = [RottenTomatoesHelperMethods interpretBoxOfficeMoviesFromData:data withkey:@"movies"];
+        [self.tableView reloadData];
     }];
     [dataTask resume];
-}
-
-- (void)interpretBoxOfficeMoviesFromArray:(NSArray *)boxOfficeArray
-{
-    [self.movies removeAllObjects];
-    Movie *movie;
-    for (NSDictionary *movieData in boxOfficeArray) {
-        // TODO: Fix placeholders
-        
-        movie = [[Movie alloc] initWithTitle:movieData[@"title"]
-                                   imagePath:movieData[@"posters"][@"thumbnail"]
-                                     urlPath:movieData[@"links"][@"self"]];
-        movie.rating = movieData[@"mpaa_rating"];
-        movie.synopsis = movieData[@"synopsis"];
-        movie.year = [movieData[@"year"] intValue];
-        movie.runtime = [movieData[@"runtime"] intValue];
-        [self.movies addObject:movie];
-    }
-    [self.tableView reloadData];
 }
 
 - (void)imageForMovie:(Movie *)movie forCell:(BoxOfficeCell *)cell atIndexPath:(NSIndexPath *)indexPath
@@ -82,23 +64,20 @@
     NSURLSessionDataTask *downloadImageTask = [[NSURLSession sharedSession]
                                                dataTaskWithURL:url
                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                   if (!error) {
-                                                       NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
-                                                       if (httpResp.statusCode == 200) {
-                                                           UIImage *downloadedImage = [[UIImage alloc] initWithData:data];
-                                                           //DLOG(@"");
-                                                           movie.image = downloadedImage;
-                                                           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                                                               if (cell.tag == indexPath.row) {
-                                                                   cell.thumbnailImageView.image = movie.image;
-                                                               }
-                                                           }];
-                                                       } else {
-                                                           // TODO: Handle the bad status code!
-                                                       }
-                                                   } else {
+                                                   if (error) {
                                                        // TODO: Handle the error!
+                                                       return;
                                                    }
+                                                   NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
+                                                   if (httpResp.statusCode != 200) {
+                                                       // TODO: Handle the bad status code!
+                                                       return;
+                                                   }
+                                                   UIImage *downloadedImage = [[UIImage alloc] initWithData:data];
+                                                   movie.image = downloadedImage;
+                                                   [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                                       [cell setThumbnailImage:movie.image];
+                                                   }];
                                                }];
     [downloadImageTask resume];
 }
@@ -113,10 +92,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BoxOfficeCell *boxOfficeCell = (BoxOfficeCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([BoxOfficeCell class]) forIndexPath:indexPath];
-    boxOfficeCell.tag = indexPath.row;
     Movie *movie = self.movies[indexPath.row];
-    boxOfficeCell.nameLabel.text = movie.name;
-    boxOfficeCell.thumbnailImageView.image = nil;
+    [boxOfficeCell setName:movie.name];
+    [boxOfficeCell setThumbnailImage:nil];
     [self imageForMovie:movie
                 forCell:boxOfficeCell
             atIndexPath:indexPath];

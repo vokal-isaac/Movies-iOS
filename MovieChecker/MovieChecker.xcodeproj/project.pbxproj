@@ -103,6 +103,50 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E4317E491A79786A00B330C1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4D25EB71A77FB5700C21065 /* BoxOfficeCollectionViewController.h */,
+				E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */,
+				E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */,
+				E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */,
+				E46B8A311A715F51001372EE /* MovieDetailViewController.h */,
+				E46B8A321A715F51001372EE /* MovieDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E4317E4A1A79787B00B330C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E46B8A2E1A715A9E001372EE /* Movie.h */,
+				E46B8A2F1A715A9E001372EE /* Movie.m */,
+				E4D25EBD1A781E1C00C21065 /* MovieList.h */,
+				E4D25EBE1A781E1C00C21065 /* MovieList.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E4317E4B1A79788300B330C1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E46B8A2B1A7158F6001372EE /* BoxOfficeCell.h */,
+				E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */,
+				E4D25EBA1A78156600C21065 /* BoxOfficeCollectionViewCell.h */,
+				E4D25EBB1A78156600C21065 /* BoxOfficeCollectionViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		E4317E4C1A7978D500B330C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E44F2C3A1A70144D00D22A9A /* AppDelegate.h */,
+				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		E44F2C2A1A70144C00D22A9A = {
 			isa = PBXGroup;
 			children = (
@@ -127,23 +171,11 @@
 		E44F2C351A70144C00D22A9A /* MovieChecker */ = {
 			isa = PBXGroup;
 			children = (
+				E4317E4B1A79788300B330C1 /* Cells */,
+				E4317E4C1A7978D500B330C1 /* Controller */,
+				E4317E4A1A79787B00B330C1 /* Model */,
 				E46B8A3C1A716AD4001372EE /* Rotten Tomatoes API Interaction */,
-				E44F2C3A1A70144D00D22A9A /* AppDelegate.h */,
-				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
-				E443D3F61A70640F007C26E3 /* BoxOfficeViewController.h */,
-				E443D3F71A70640F007C26E3 /* BoxOfficeViewController.m */,
-				E46B8A311A715F51001372EE /* MovieDetailViewController.h */,
-				E46B8A321A715F51001372EE /* MovieDetailViewController.m */,
-				E4D25EB71A77FB5700C21065 /* BoxOfficeCollectionViewController.h */,
-				E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */,
-				E46B8A2B1A7158F6001372EE /* BoxOfficeCell.h */,
-				E46B8A2C1A7158F6001372EE /* BoxOfficeCell.m */,
-				E4D25EBA1A78156600C21065 /* BoxOfficeCollectionViewCell.h */,
-				E4D25EBB1A78156600C21065 /* BoxOfficeCollectionViewCell.m */,
-				E46B8A2E1A715A9E001372EE /* Movie.h */,
-				E46B8A2F1A715A9E001372EE /* Movie.m */,
-				E4D25EBD1A781E1C00C21065 /* MovieList.h */,
-				E4D25EBE1A781E1C00C21065 /* MovieList.m */,
+				E4317E491A79786A00B330C1 /* View Controllers */,
 				E44F2C401A70144D00D22A9A /* Main.storyboard */,
 				E44F2C431A70144D00D22A9A /* Images.xcassets */,
 				E44F2C361A70144D00D22A9A /* Supporting Files */,

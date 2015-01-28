@@ -6,42 +6,25 @@
 //  Copyright (c) 2015 Vokal. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
-
-#import "BoxOfficeCollectionViewController.h"
 #import "BoxOfficeCollectionViewCell.h"
-#import "MovieList.h"
+#import "BoxOfficeCollectionViewController.h"
 #import "Movie.h"
 #import "MovieDetailViewController.h"
+#import "MovieList.h"
 
 @interface BoxOfficeCollectionViewController ()
 
 @property (nonatomic, strong) MovieList *movieList;
+@property (nonatomic, weak) NSArray *movies;
 
 @end
 
 @implementation BoxOfficeCollectionViewController
 
-static NSString *const reuseIdentifier = @"BoxOfficeCollectionCell";
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    //[self.collectionView registerClass:[BoxOfficeCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
     self.movieList = [[MovieList alloc] initWithDelegate:self];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Navigation
@@ -59,11 +42,6 @@ static NSString *const reuseIdentifier = @"BoxOfficeCollectionCell";
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
-{
-    return 1;
-}
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     NSLog(@"Returning itemcount");
@@ -72,53 +50,20 @@ static NSString *const reuseIdentifier = @"BoxOfficeCollectionCell";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    BoxOfficeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionViewCell class]) forIndexPath:indexPath];
-    
-    // Configure the cell
+    BoxOfficeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionViewCell class])
+                                                                                  forIndexPath:indexPath];
     Movie *movie = self.movies[indexPath.row];
     NSURL *url = [NSURL URLWithString:movie.imagePath];
-    [cell.thumbnailImageView sd_setImageWithURL:url completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        cell.thumbnailImageView.image = image;
-    }];
+    [cell setThumbnailImageFromURL:url];
     return cell;
 }
 
 #pragma mark <MovieListDelegate>
 
-- (void)synchMoviesWithArray:(NSMutableArray *)movies
+- (void)synchMoviesWithArray:(NSArray *)movies
 {
-    NSLog(@"Messaged Delegate");
     self.movies = movies;
-    NSLog(@"Reloading viewData");
     [self.collectionView reloadData];
 }
-
-#pragma mark <UICollectionViewDelegate>
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

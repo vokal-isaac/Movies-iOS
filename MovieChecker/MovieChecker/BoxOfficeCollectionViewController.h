@@ -11,6 +11,4 @@
 
 @interface BoxOfficeCollectionViewController : UICollectionViewController <MovieListDelegate>
 
-@property (nonatomic, weak) NSMutableArray *movies;
-
 @end
