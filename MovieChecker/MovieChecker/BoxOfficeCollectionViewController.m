@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Vokal. All rights reserved.
 //
 
-#import "BoxOfficeCollectionViewCell.h"
+#import "BoxOfficeCollectionCell.h"
 #import "BoxOfficeCollectionViewController.h"
 #import "Movie.h"
 #import "MovieDetailViewController.h"
@@ -74,7 +74,7 @@
 {
     
     if (self.isGrid) {
-        BoxOfficeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionViewCell class])
+        BoxOfficeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionCell class])
                                                                                       forIndexPath:indexPath];
         Movie *movie = self.movies[indexPath.row];
         NSURL *url = [NSURL URLWithString:movie.imagePath];

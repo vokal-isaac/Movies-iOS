@@ -6,16 +6,16 @@
 //  Copyright (c) 2015 Vokal. All rights reserved.
 //
 
-#import "BoxOfficeCell.h"
+#import "BoxOfficeTableCell.h"
 
-@interface BoxOfficeCell ()
+@interface BoxOfficeTableCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 
 @end
 
-@implementation BoxOfficeCell
+@implementation BoxOfficeTableCell
 
 - (void)setThumbnailImage:(UIImage *)image
 {

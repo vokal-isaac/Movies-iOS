@@ -1,5 +1,5 @@
 //
-//  BoxOfficeCell.h
+//  BoxOfficeTableCell.h
 //  MovieChecker
 //
 //  Created by Joseph Goldberg on 1/22/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BoxOfficeCell : UICollectionViewCell
+@interface BoxOfficeTableCell : UICollectionViewCell
 
 - (void)setThumbnailImage:(UIImage *)image;
 - (void)setName:(NSString *)name;

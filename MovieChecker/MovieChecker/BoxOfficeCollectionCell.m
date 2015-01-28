@@ -8,15 +8,15 @@
 
 #import <SDWebImage/UIImageView+WebCache.h>
 
-#import "BoxOfficeCollectionViewCell.h"
+#import "BoxOfficeCollectionCell.h"
 
-@interface BoxOfficeCollectionViewCell ()
+@interface BoxOfficeCollectionCell ()
 
 @property (nonatomic, weak) IBOutlet UIImageView *thumbnailImageView;
 
 @end
 
-@implementation BoxOfficeCollectionViewCell
+@implementation BoxOfficeCollectionCell
 
 - (void)setThumbnailImageFromURL:(NSURL *)url
 {
