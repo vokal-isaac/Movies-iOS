@@ -7,8 +7,10 @@
 //
 
 #import "MovieList.h"
-#import "RottenTomatoesHelperMethods.h"
+
 #import "Movie.h"
+
+#import "RottenTomatoesHelperMethods.h"
 
 @interface MovieList ()
 

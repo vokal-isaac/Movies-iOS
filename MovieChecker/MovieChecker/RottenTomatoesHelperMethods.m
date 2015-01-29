@@ -7,6 +7,7 @@
 //
 
 #import "RottenTomatoesHelperMethods.h"
+
 #import "Movie.h"
 
 static NSString *APIKeyString = @"jw64knjg769gnmd2zs35ttz6";

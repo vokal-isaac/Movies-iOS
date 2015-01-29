@@ -8,6 +8,8 @@
 
 #import "BoxOfficeTableCell.h"
 
+#import <SDWebImage/UIImageView+WebCache.h>
+
 @interface BoxOfficeTableCell ()
 
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
@@ -17,9 +19,14 @@
 
 @implementation BoxOfficeTableCell
 
-- (void)setThumbnailImage:(UIImage *)image
+- (void)setThumbnailImageFromURL:(NSURL *)url
 {
-    self.thumbnailImageView.image = image;
+    [self.thumbnailImageView sd_setImageWithURL:url completed:^(UIImage *image,
+                                                                NSError *error,
+                                                                SDImageCacheType cacheType,
+                                                                NSURL *imageURL) {
+        self.thumbnailImageView.image = image;
+    }];
 }
 
 - (void)setName:(NSString *)name

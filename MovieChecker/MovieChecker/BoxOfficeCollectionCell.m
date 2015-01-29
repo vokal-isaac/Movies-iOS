@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 Vokal. All rights reserved.
 //
 
-#import <SDWebImage/UIImageView+WebCache.h>
-
 #import "BoxOfficeCollectionCell.h"
+
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface BoxOfficeCollectionCell ()
 

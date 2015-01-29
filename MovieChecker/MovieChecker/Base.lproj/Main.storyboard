@@ -51,10 +51,10 @@
                                 </view>
                                 <connections>
                                     <outlet property="thumbnailImageView" destination="bzf-RG-apW" id="ZHo-2K-Cic"/>
-                                    <segue destination="qWC-tS-OJK" kind="push" identifier="MovieDetails" id="Sks-cU-Ran"/>
+                                    <segue destination="qWC-tS-OJK" kind="push" identifier="MovieDetailsFromCollection" id="Sks-cU-Ran"/>
                                 </connections>
                             </collectionViewCell>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BoxOfficeCell" id="B2u-uy-onl" customClass="BoxOfficeTableCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BoxOfficeTableCell" id="B2u-uy-onl" customClass="BoxOfficeTableCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -85,6 +85,11 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="kzU-3o-7cq" secondAttribute="trailing" constant="34" id="IeO-No-6Z8"/>
                                 </constraints>
                                 <size key="customSize" width="266" height="100"/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="kzU-3o-7cq" id="U6D-cG-Fjz"/>
+                                    <outlet property="thumbnailImageView" destination="Ye4-dS-p2H" id="XFN-zW-VIW"/>
+                                    <segue destination="qWC-tS-OJK" kind="push" identifier="MovieDetailsFromTable" id="R1t-Pr-bpx"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -287,4 +292,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="R1t-Pr-bpx"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+
 #import "MovieList.h"
 
 @interface BoxOfficeCollectionViewController : UICollectionViewController <MovieListDelegate, UICollectionViewDelegateFlowLayout>

@@ -6,11 +6,15 @@
 //  Copyright (c) 2015 Vokal. All rights reserved.
 //
 
-#import "BoxOfficeCollectionCell.h"
 #import "BoxOfficeCollectionViewController.h"
-#import "Movie.h"
+
 #import "MovieDetailViewController.h"
+
+#import "Movie.h"
 #import "MovieList.h"
+
+#import "BoxOfficeCollectionCell.h"
+#import "BoxOfficeTableCell.h"
 
 // Define DLOG to log to NSLog when DEBUG is defined
 #ifdef DEBUG
@@ -40,7 +44,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"MovieDetails"]) {
+    if ([segue.identifier isEqualToString:@"MovieDetailsFromCollection"] || [segue.identifier isEqualToString:@"MovieDetailsFromTable"]) {
         NSIndexPath *path = [self.collectionView indexPathForCell:sender];
         Movie *movie = self.movies[path.row];
         MovieDetailViewController *detailViewController = segue.destinationViewController;
@@ -53,14 +57,8 @@
 
 - (IBAction)toggleLayout:(UIBarButtonItem *)sender
 {
-    //self.isGrid ^= YES;
     self.isGrid = !self.isGrid;
     [self.collectionView reloadData];
-}
-
-- (void)setFlowNavigationToCategoryStyle
-{
-    //self.fl
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -72,17 +70,19 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    Movie *movie = self.movies[indexPath.row];
+    NSURL *url = [NSURL URLWithString:movie.imagePath];
     if (self.isGrid) {
         BoxOfficeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionCell class])
                                                                                       forIndexPath:indexPath];
-        Movie *movie = self.movies[indexPath.row];
-        NSURL *url = [NSURL URLWithString:movie.imagePath];
         [cell setThumbnailImageFromURL:url];
         return cell;
     } else {
-        // TODO: Handling for nongrid
-        return nil;
+        // TODO: Finish Handling for nongrid
+        BoxOfficeTableCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeTableCell class]) forIndexPath:indexPath];
+        [cell setName:movie.name];
+        [cell setThumbnailImageFromURL:url];
+        return cell;
     }
     
 }
@@ -104,8 +104,7 @@
     if (self.isGrid) {
         return CGSizeMake(54.0f, 80.0f);
     } else {
-        // TODO: Value for nongrid
-        return CGSizeZero;
+        return CGSizeMake(320.0f, 44.0f);
     }
     
 }
@@ -141,8 +140,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     if (self.isGrid) {
         return 10.0f;
     } else {
-        // TODO: Value for nongrid
-        return 0.0;
+        return 1.0;
     }
 }
 

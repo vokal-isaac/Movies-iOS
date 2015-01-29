@@ -10,7 +10,7 @@
 
 @interface BoxOfficeTableCell : UICollectionViewCell
 
-- (void)setThumbnailImage:(UIImage *)image;
+- (void)setThumbnailImageFromURL:(NSURL *)url;
 - (void)setName:(NSString *)name;
 
 @end
