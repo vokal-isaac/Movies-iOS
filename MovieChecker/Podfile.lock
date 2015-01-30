@@ -1,0 +1,21 @@
+PODS:
+  - ILGAsserts (1.1.1)
+  - ILGHttpConstants (1.0.0)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+  - VOKMockUrlProtocol (1.0.3):
+    - ILGHttpConstants (~> 1.0.0)
+
+DEPENDENCIES:
+  - ILGAsserts (~> 1.0)
+  - SDWebImage (~> 3.7)
+  - VOKMockUrlProtocol (~> 1.0)
+
+SPEC CHECKSUMS:
+  ILGAsserts: 8b7491bb2b14ecd138418ac65ba888974ae6535f
+  ILGHttpConstants: 6e9661f7011c8b0dee57440e1e4c1a65ecfc0e6d
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  VOKMockUrlProtocol: 87141ea47cb4eabf8e958bdb1dc3eb2321831b83
+
+COCOAPODS: 0.35.0

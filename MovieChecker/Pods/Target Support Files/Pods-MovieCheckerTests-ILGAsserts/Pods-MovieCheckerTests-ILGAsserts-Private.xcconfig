@@ -1,0 +1,6 @@
+#include "Pods-MovieCheckerTests-ILGAsserts.xcconfig"
+FRAMEWORK_SEARCH_PATHS = ${PODS_MOVIECHECKERTESTS_ILGASSERTS_FRAMEWORK_SEARCH_PATHS}
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/ILGAsserts" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/ILGAsserts" "${PODS_ROOT}/Headers/Public/ILGHttpConstants" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/VOKMockUrlProtocol"
+OTHER_LDFLAGS = ${PODS_MOVIECHECKERTESTS_ILGASSERTS_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}

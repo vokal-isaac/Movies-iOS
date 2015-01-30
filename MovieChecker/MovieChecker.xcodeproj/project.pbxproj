@@ -7,13 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CDBDE18EC7F509168E309935 /* libPods-MovieCheckerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD4FF26E4275870B2DB07F8 /* libPods-MovieCheckerTests.a */; };
+		D453156FA8BB6BB07A1CAC22 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A99D0354B8EB90120C9FBA5E /* libPods.a */; };
+		E443D3FA1A70647A007C26E3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E443D3F91A70647A007C26E3 /* Default-568h@2x.png */; };
 		E44F2C391A70144D00D22A9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C381A70144D00D22A9A /* main.m */; };
 		E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C3B1A70144D00D22A9A /* AppDelegate.m */; };
-		E44F2C3F1A70144D00D22A9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C3E1A70144D00D22A9A /* ViewController.m */; };
 		E44F2C421A70144D00D22A9A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C401A70144D00D22A9A /* Main.storyboard */; };
 		E44F2C441A70144D00D22A9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C431A70144D00D22A9A /* Images.xcassets */; };
-		E44F2C471A70144D00D22A9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E44F2C451A70144D00D22A9A /* LaunchScreen.xib */; };
 		E44F2C531A70144D00D22A9A /* MovieCheckerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E44F2C521A70144D00D22A9A /* MovieCheckerTests.m */; };
+		E46B8A2D1A7158F6001372EE /* BoxOfficeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2C1A7158F6001372EE /* BoxOfficeTableCell.m */; };
+		E46B8A301A715A9E001372EE /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2F1A715A9E001372EE /* Movie.m */; };
+		E46B8A331A715F51001372EE /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A321A715F51001372EE /* MovieDetailViewController.m */; };
+		E46B8A3B1A716AC7001372EE /* RottenTomatoesHelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A3A1A716AC7001372EE /* RottenTomatoesHelperMethods.m */; };
+		E4D25EB91A77FB5700C21065 /* BoxOfficeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */; };
+		E4D25EBC1A78156600C21065 /* BoxOfficeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25EBB1A78156600C21065 /* BoxOfficeCollectionCell.m */; };
+		E4D25EBF1A781E1C00C21065 /* MovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25EBE1A781E1C00C21065 /* MovieList.m */; };
+		E4E376451A7AA0E0006606F7 /* VOKMockData in Resources */ = {isa = PBXBuildFile; fileRef = E4E376441A7AA0E0006606F7 /* VOKMockData */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +36,38 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04F15B9163285298C86C9335 /* Pods-MovieCheckerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieCheckerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieCheckerTests/Pods-MovieCheckerTests.release.xcconfig"; sourceTree = "<group>"; };
+		2DD4FF26E4275870B2DB07F8 /* libPods-MovieCheckerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieCheckerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		79295EE857D0E51F4945EEE6 /* Pods-MovieCheckerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieCheckerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieCheckerTests/Pods-MovieCheckerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8C992A5BFC83A9348BC0B44B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A99D0354B8EB90120C9FBA5E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E443D3F91A70647A007C26E3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E44F2C331A70144C00D22A9A /* MovieChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44F2C371A70144D00D22A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44F2C381A70144D00D22A9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E44F2C3A1A70144D00D22A9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E44F2C3B1A70144D00D22A9A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E44F2C3D1A70144D00D22A9A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E44F2C3E1A70144D00D22A9A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E44F2C411A70144D00D22A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E44F2C431A70144D00D22A9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E44F2C461A70144D00D22A9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E44F2C4C1A70144D00D22A9A /* MovieCheckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieCheckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44F2C511A70144D00D22A9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44F2C521A70144D00D22A9A /* MovieCheckerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCheckerTests.m; sourceTree = "<group>"; };
+		E46B8A2B1A7158F6001372EE /* BoxOfficeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeTableCell.h; sourceTree = "<group>"; };
+		E46B8A2C1A7158F6001372EE /* BoxOfficeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeTableCell.m; sourceTree = "<group>"; };
+		E46B8A2E1A715A9E001372EE /* Movie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		E46B8A2F1A715A9E001372EE /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		E46B8A311A715F51001372EE /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
+		E46B8A321A715F51001372EE /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
+		E46B8A391A716AC7001372EE /* RottenTomatoesHelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RottenTomatoesHelperMethods.h; sourceTree = "<group>"; };
+		E46B8A3A1A716AC7001372EE /* RottenTomatoesHelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesHelperMethods.m; sourceTree = "<group>"; };
+		E4D25EB71A77FB5700C21065 /* BoxOfficeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeCollectionViewController.h; sourceTree = "<group>"; };
+		E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeCollectionViewController.m; sourceTree = "<group>"; };
+		E4D25EBA1A78156600C21065 /* BoxOfficeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeCollectionCell.h; sourceTree = "<group>"; };
+		E4D25EBB1A78156600C21065 /* BoxOfficeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeCollectionCell.m; sourceTree = "<group>"; };
+		E4D25EBD1A781E1C00C21065 /* MovieList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieList.h; sourceTree = "<group>"; };
+		E4D25EBE1A781E1C00C21065 /* MovieList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieList.m; sourceTree = "<group>"; };
+		E4E376441A7AA0E0006606F7 /* VOKMockData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VOKMockData; sourceTree = "<group>"; };
+		ED4BB5D8D256FFD1D2091861 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D453156FA8BB6BB07A1CAC22 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +83,84 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDBDE18EC7F509168E309935 /* libPods-MovieCheckerTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44EE4ABCEAD804A7A86B4341 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A99D0354B8EB90120C9FBA5E /* libPods.a */,
+				2DD4FF26E4275870B2DB07F8 /* libPods-MovieCheckerTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B51D57788AAD9FB514D4A21A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C992A5BFC83A9348BC0B44B /* Pods.debug.xcconfig */,
+				ED4BB5D8D256FFD1D2091861 /* Pods.release.xcconfig */,
+				79295EE857D0E51F4945EEE6 /* Pods-MovieCheckerTests.debug.xcconfig */,
+				04F15B9163285298C86C9335 /* Pods-MovieCheckerTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E4317E491A79786A00B330C1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E4D25EB71A77FB5700C21065 /* BoxOfficeCollectionViewController.h */,
+				E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */,
+				E46B8A311A715F51001372EE /* MovieDetailViewController.h */,
+				E46B8A321A715F51001372EE /* MovieDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		E4317E4A1A79787B00B330C1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E46B8A2E1A715A9E001372EE /* Movie.h */,
+				E46B8A2F1A715A9E001372EE /* Movie.m */,
+				E4D25EBD1A781E1C00C21065 /* MovieList.h */,
+				E4D25EBE1A781E1C00C21065 /* MovieList.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E4317E4B1A79788300B330C1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E46B8A2B1A7158F6001372EE /* BoxOfficeTableCell.h */,
+				E46B8A2C1A7158F6001372EE /* BoxOfficeTableCell.m */,
+				E4D25EBA1A78156600C21065 /* BoxOfficeCollectionCell.h */,
+				E4D25EBB1A78156600C21065 /* BoxOfficeCollectionCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		E4317E4C1A7978D500B330C1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E44F2C3A1A70144D00D22A9A /* AppDelegate.h */,
+				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		E44F2C2A1A70144C00D22A9A = {
 			isa = PBXGroup;
 			children = (
+				E443D3F91A70647A007C26E3 /* Default-568h@2x.png */,
 				E44F2C351A70144C00D22A9A /* MovieChecker */,
 				E44F2C4F1A70144D00D22A9A /* MovieCheckerTests */,
 				E44F2C341A70144C00D22A9A /* Products */,
+				B51D57788AAD9FB514D4A21A /* Pods */,
+				44EE4ABCEAD804A7A86B4341 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,13 +176,13 @@
 		E44F2C351A70144C00D22A9A /* MovieChecker */ = {
 			isa = PBXGroup;
 			children = (
-				E44F2C3A1A70144D00D22A9A /* AppDelegate.h */,
-				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
-				E44F2C3D1A70144D00D22A9A /* ViewController.h */,
-				E44F2C3E1A70144D00D22A9A /* ViewController.m */,
+				E4317E4B1A79788300B330C1 /* Cells */,
+				E4317E4C1A7978D500B330C1 /* Controller */,
+				E4317E4A1A79787B00B330C1 /* Model */,
+				E46B8A3C1A716AD4001372EE /* Rotten Tomatoes API Interaction */,
+				E4317E491A79786A00B330C1 /* View Controllers */,
 				E44F2C401A70144D00D22A9A /* Main.storyboard */,
 				E44F2C431A70144D00D22A9A /* Images.xcassets */,
-				E44F2C451A70144D00D22A9A /* LaunchScreen.xib */,
 				E44F2C361A70144D00D22A9A /* Supporting Files */,
 			);
 			path = MovieChecker;
@@ -106,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				E44F2C521A70144D00D22A9A /* MovieCheckerTests.m */,
+				E4E376441A7AA0E0006606F7 /* VOKMockData */,
 				E44F2C501A70144D00D22A9A /* Supporting Files */,
 			);
 			path = MovieCheckerTests;
@@ -119,6 +215,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E46B8A3C1A716AD4001372EE /* Rotten Tomatoes API Interaction */ = {
+			isa = PBXGroup;
+			children = (
+				E46B8A391A716AC7001372EE /* RottenTomatoesHelperMethods.h */,
+				E46B8A3A1A716AC7001372EE /* RottenTomatoesHelperMethods.m */,
+			);
+			name = "Rotten Tomatoes API Interaction";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +231,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E44F2C561A70144D00D22A9A /* Build configuration list for PBXNativeTarget "MovieChecker" */;
 			buildPhases = (
+				C7381EA5C6E3B066D371A5EF /* Check Pods Manifest.lock */,
 				E44F2C2F1A70144C00D22A9A /* Sources */,
 				E44F2C301A70144C00D22A9A /* Frameworks */,
 				E44F2C311A70144C00D22A9A /* Resources */,
+				OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */,
+				AF0548DDE477EBA14783B5C9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,9 +251,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E44F2C591A70144D00D22A9A /* Build configuration list for PBXNativeTarget "MovieCheckerTests" */;
 			buildPhases = (
+				F1C5B85572E788FB2295FB86 /* Check Pods Manifest.lock */,
 				E44F2C481A70144D00D22A9A /* Sources */,
 				E44F2C491A70144D00D22A9A /* Frameworks */,
 				E44F2C4A1A70144D00D22A9A /* Resources */,
+				309EE54B8AD3FAAA35896DFD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,7 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E44F2C421A70144D00D22A9A /* Main.storyboard in Resources */,
-				E44F2C471A70144D00D22A9A /* LaunchScreen.xib in Resources */,
+				E443D3FA1A70647A007C26E3 /* Default-568h@2x.png in Resources */,
 				E44F2C441A70144D00D22A9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,19 +319,103 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E376451A7AA0E0006606F7 /* VOKMockData in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		309EE54B8AD3FAAA35896DFD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieCheckerTests/Pods-MovieCheckerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF0548DDE477EBA14783B5C9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7381EA5C6E3B066D371A5EF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1C5B85572E788FB2295FB86 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		OBJCLEANCUSTOMRUNSCRIPTT /* Objective-Clean Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Objective-Clean Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "if [[ -z ${SKIP_OBJCLEAN} || ${SKIP_OBJCLEAN} != 1 ]]; then\nif [[ -d \"${LOCAL_APPS_DIR}/Objective-Clean.app\" ]]; then \n\"${LOCAL_APPS_DIR}\"/Objective-Clean.app/Contents/Resources/ObjClean.app/Contents/MacOS/ObjClean \"${SRCROOT}\" \nelse\necho \"warning: You have to install and set up Objective-Clean to use its features!\" \nfi\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E44F2C2F1A70144C00D22A9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E44F2C3F1A70144D00D22A9A /* ViewController.m in Sources */,
+				E46B8A3B1A716AC7001372EE /* RottenTomatoesHelperMethods.m in Sources */,
+				E46B8A331A715F51001372EE /* MovieDetailViewController.m in Sources */,
 				E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */,
+				E46B8A301A715A9E001372EE /* Movie.m in Sources */,
 				E44F2C391A70144D00D22A9A /* main.m in Sources */,
+				E4D25EBF1A781E1C00C21065 /* MovieList.m in Sources */,
+				E4D25EB91A77FB5700C21065 /* BoxOfficeCollectionViewController.m in Sources */,
+				E46B8A2D1A7158F6001372EE /* BoxOfficeTableCell.m in Sources */,
+				E4D25EBC1A78156600C21065 /* BoxOfficeCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,14 +444,6 @@
 				E44F2C411A70144D00D22A9A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E44F2C451A70144D00D22A9A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E44F2C461A70144D00D22A9A /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,6 +527,7 @@
 		};
 		E44F2C571A70144D00D22A9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C992A5BFC83A9348BC0B44B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieChecker/Info.plist;
@@ -351,6 +538,7 @@
 		};
 		E44F2C581A70144D00D22A9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED4BB5D8D256FFD1D2091861 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieChecker/Info.plist;
@@ -361,6 +549,7 @@
 		};
 		E44F2C5A1A70144D00D22A9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79295EE857D0E51F4945EEE6 /* Pods-MovieCheckerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -380,6 +569,7 @@
 		};
 		E44F2C5B1A70144D00D22A9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04F15B9163285298C86C9335 /* Pods-MovieCheckerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -412,6 +602,7 @@
 				E44F2C581A70144D00D22A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E44F2C591A70144D00D22A9A /* Build configuration list for PBXNativeTarget "MovieCheckerTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +611,7 @@
 				E44F2C5B1A70144D00D22A9A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
