@@ -28,7 +28,7 @@
     self.rating.text = self.movie.rating;
     self.synopsis.numberOfLines = 0;
     self.synopsis.text = self.movie.synopsis;
-    [self.synopsis sizeToFit];
+    //[self.synopsis sizeToFit];
 }
 
 @end

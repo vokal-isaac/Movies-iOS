@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     self.isGrid = YES;
+    [self.collectionView setBackgroundColor:[UIColor grayColor]];
+    [self.collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
     self.movieList = [[MovieList alloc] initWithDelegate:self];
 }
 
@@ -78,8 +80,8 @@
         [cell setThumbnailImageFromURL:url];
         return cell;
     } else {
-        // TODO: Finish Handling for nongrid
         BoxOfficeTableCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeTableCell class]) forIndexPath:indexPath];
+        [cell setBackgroundColor:[UIColor whiteColor]];
         [cell setName:movie.name];
         [cell setThumbnailImageFromURL:url];
         return cell;
@@ -102,9 +104,10 @@
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.isGrid) {
+        
         return CGSizeMake(54.0f, 80.0f);
     } else {
-        return CGSizeMake(320.0f, 44.0f);
+        return CGSizeMake(320.0f, 100.0f);
     }
     
 }
@@ -116,7 +119,6 @@ referenceSizeForHeaderInSection:(NSInteger)section
     if (self.isGrid ) {
         return CGSizeZero;
     } else {
-        // TODO: Value for nongrid
         return CGSizeZero;
     }
 }
@@ -128,7 +130,6 @@ referenceSizeForFooterInSection:(NSInteger)section
     if (self.isGrid ) {
         return CGSizeZero;
     } else {
-        // TODO: Value for nongrid
         return CGSizeZero;
     }
 }
@@ -140,7 +141,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     if (self.isGrid) {
         return 10.0f;
     } else {
-        return 1.0;
+        return 1.0f;
     }
 }
 
@@ -163,7 +164,6 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     if (self.isGrid) {
         return UIEdgeInsetsMake(7.0f, 7.0f, 7.0f, 7.0f);
     } else {
-        // TODO: Value for nongrid
         return UIEdgeInsetsZero;
     }
     
