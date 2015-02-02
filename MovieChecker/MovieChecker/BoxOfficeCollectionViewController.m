@@ -11,7 +11,7 @@
 #import "MovieDetailViewController.h"
 
 #import "Movie.h"
-#import "MovieList.h"
+#import "MovieListLoader.h"
 
 #import "BoxOfficeCollectionCell.h"
 #import "BoxOfficeTableCell.h"
@@ -25,7 +25,7 @@
 
 @interface BoxOfficeCollectionViewController ()
 
-@property (nonatomic, strong) MovieList *movieList;
+@property (nonatomic, strong) MovieListLoader *movieListLoader;
 @property (nonatomic, weak) NSArray *movies;
 @property (nonatomic, assign) BOOL isGrid;
 
@@ -37,9 +37,9 @@
 {
     [super viewDidLoad];
     self.isGrid = YES;
-    [self.collectionView setBackgroundColor:[UIColor grayColor]];
-    [self.collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
-    self.movieList = [[MovieList alloc] initWithDelegate:self];
+    self.collectionView.backgroundColor = [UIColor grayColor];
+    self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.movieListLoader = [[MovieListLoader alloc] initWithDelegate:self];
 }
 
 #pragma mark - Navigation
@@ -50,7 +50,7 @@
         NSIndexPath *path = [self.collectionView indexPathForCell:sender];
         Movie *movie = self.movies[path.row];
         MovieDetailViewController *detailViewController = segue.destinationViewController;
-        [detailViewController setMovie:movie];
+        detailViewController.movie = movie;
     }
     
 }
@@ -73,17 +73,15 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     Movie *movie = self.movies[indexPath.row];
-    NSURL *url = [NSURL URLWithString:movie.imagePath];
     if (self.isGrid) {
         BoxOfficeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionCell class])
-                                                                                      forIndexPath:indexPath];
-        [cell setThumbnailImageFromURL:url];
+                                                                                  forIndexPath:indexPath];
+        [cell displayMovie:movie];
         return cell;
     } else {
         BoxOfficeTableCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeTableCell class]) forIndexPath:indexPath];
-        [cell setBackgroundColor:[UIColor whiteColor]];
-        [cell setName:movie.name];
-        [cell setThumbnailImageFromURL:url];
+        cell.backgroundColor = [UIColor whiteColor];
+        [cell displayMovie:movie];
         return cell;
     }
     
@@ -91,7 +89,7 @@
 
 #pragma mark <MovieListDelegate>
 
-- (void)synchMoviesWithArray:(NSArray *)movies
+- (void)movieListLoader:(id<MovieListDelegate> *)movieListLoader didLoadMovies:(NSArray *)movies;
 {
     self.movies = movies;
     [self.collectionView reloadData];
@@ -152,7 +150,6 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     if (self.isGrid) {
         return 10.0f;
     } else {
-        // TODO: Value for nongrid
         return 0.0;
     }
 }

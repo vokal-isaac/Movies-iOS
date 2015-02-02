@@ -19,19 +19,10 @@
 
 @implementation BoxOfficeTableCell
 
-- (void)setThumbnailImageFromURL:(NSURL *)url
+- (void)displayMovie:(Movie *)movie
 {
-    [self.thumbnailImageView sd_setImageWithURL:url completed:^(UIImage *image,
-                                                                NSError *error,
-                                                                SDImageCacheType cacheType,
-                                                                NSURL *imageURL) {
-        self.thumbnailImageView.image = image;
-    }];
-}
-
-- (void)setName:(NSString *)name
-{
-    self.nameLabel.text = name;
+    [super displayMovie:movie];
+    self.nameLabel.text = movie.name;
 }
 
 - (void)awakeFromNib

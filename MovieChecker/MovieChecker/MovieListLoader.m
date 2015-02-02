@@ -1,24 +1,24 @@
 //
-//  MovieList.m
+//  MovieListLoader.m
 //  MovieChecker
 //
 //  Created by Joseph Goldberg on 1/27/15.
 //  Copyright (c) 2015 Vokal. All rights reserved.
 //
 
-#import "MovieList.h"
+#import "MovieListLoader.h"
 
 #import "Movie.h"
 
 #import "RottenTomatoesHelperMethods.h"
 
-@interface MovieList ()
+@interface MovieListLoader ()
 
 @property (nonatomic, strong) NSURLSession *session;
 
 @end
 
-@implementation MovieList
+@implementation MovieListLoader
 
 - (void)fetchMovies
 {
@@ -38,7 +38,7 @@
                                           self.movies = [RottenTomatoesHelperMethods interpretBoxOfficeMoviesFromData:data
                                                                                                 withkey:@"movies"];
                                           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                                              [self.delegate synchMoviesWithArray:self.movies];
+                                              [self.delegate movieListLoader:self didLoadMovies:self.movies];
                                           }];
                                       }];
     [dataTask resume];

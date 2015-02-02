@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BoxOfficeTableCell : UICollectionViewCell
+#import "BoxOfficeCollectionCell.h"
 
-- (void)setThumbnailImageFromURL:(NSURL *)url;
-- (void)setName:(NSString *)name;
+@interface BoxOfficeTableCell : BoxOfficeCollectionCell
 
 @end

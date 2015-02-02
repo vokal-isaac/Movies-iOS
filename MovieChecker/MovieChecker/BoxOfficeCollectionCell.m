@@ -18,13 +18,16 @@
 
 @implementation BoxOfficeCollectionCell
 
-- (void)setThumbnailImageFromURL:(NSURL *)url
+- (void)displayMovie:(Movie *)movie
 {
-    [self.thumbnailImageView sd_setImageWithURL:url completed:^(UIImage *image,
-                                                                NSError *error,
-                                                                SDImageCacheType cacheType,
-                                                                NSURL *imageURL) {
-        self.thumbnailImageView.image = image;
+    
+    BoxOfficeCollectionCell *myself = self;
+    [self.thumbnailImageView sd_setImageWithURL:[NSURL URLWithString:movie.imagePath]
+                                      completed:^(UIImage *image,
+                                                  NSError *error,
+                                                  SDImageCacheType cacheType,
+                                                  NSURL *imageURL) {
+                                          myself.thumbnailImageView.image = image;
     }];
 }
 

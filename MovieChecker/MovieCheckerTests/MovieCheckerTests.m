@@ -20,7 +20,7 @@
 
 // Models
 #import "Movie.h"
-#import "MovieList.h"
+#import "MovieListLoader.h"
 
 // Other
 #import "RottenTomatoesHelperMethods.h"
