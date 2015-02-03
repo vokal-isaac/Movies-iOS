@@ -40,6 +40,7 @@
     self.collectionView.backgroundColor = [UIColor grayColor];
     self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
     self.movieListLoader = [[MovieListLoader alloc] initWithDelegate:self];
+    [self.movieListLoader fetchMovies];
 }
 
 #pragma mark - Navigation

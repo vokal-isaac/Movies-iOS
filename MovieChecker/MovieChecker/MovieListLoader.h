@@ -23,5 +23,6 @@
 @property (nonatomic, weak) id <MovieListDelegate> delegate;
 
 - (id)initWithDelegate:(id)delegate;
+- (void)fetchMovies;
 
 @end
