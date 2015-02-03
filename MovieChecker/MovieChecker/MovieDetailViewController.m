@@ -14,6 +14,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *ratingLabel;
 @property (nonatomic, weak) IBOutlet UILabel *synopsisLabel;
 @property (nonatomic, weak) IBOutlet UILabel *yearLabel;
+@property (nonatomic, weak) IBOutlet UITableViewCell *detailCell;
 
 @end
 
@@ -28,7 +29,9 @@
     self.ratingLabel.text = self.movie.rating;
     self.synopsisLabel.numberOfLines = 0;
     self.synopsisLabel.text = self.movie.synopsis;
-    //[self.synopsis sizeToFit];
+    [self.synopsisLabel sizeToFit];
+    [self.detailCell sizeToFit];
+    
 }
 
 @end

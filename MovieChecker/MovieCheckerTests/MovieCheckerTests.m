@@ -32,6 +32,7 @@
 
 static NSTimeInterval const TimeoutInterval = 10.0;  // 10 seconds
 static NSString const *AmericanSniperSynopsis = @"From director Clint Eastwood comes \"American Sniper,\" starring Bradley Cooper as Chris Kyle, the most lethal sniper in U.S. military history. But there was much more to this true American hero than his skill with a rifle. U.S. Navy SEAL sniper Chris Kyle is sent to Iraq with only one mission: to protect his brothers-in-arms. His pinpoint accuracy saves countless lives on the battlefield and, as stories of his courageous exploits spread, he earns the nickname \"Legend.\" However, his reputation is also growing behind enemy lines, putting a price on his head and making him a prime target of insurgents. Despite the danger, as well as the toll on his family at home, Chris serves through four harrowing tours of duty in Iraq, becoming emblematic of the SEAL creed to \"leave no man behind.\" But upon returning home, Chris finds that it is the war he can't leave behind. (C) Warner Bros";
+static NSString *BoxOfficeURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=50&apikey=jw64knjg769gnmd2zs35ttz6";
 
 @implementation MovieCheckerTests
 
@@ -46,44 +47,46 @@ static NSString const *AmericanSniperSynopsis = @"From director Clint Eastwood c
     self.session.configuration.protocolClasses = [currentProtocolClasses copy];
     
 }
-// Currently commented out, as it needs to be reworked to account for the changes to MovieListLoader
-//- (void)testDownloadBoxOfficeList
-//{
-//    BOOL __block done = NO;
-//    BoxOfficeCollectionViewController *vc = [[BoxOfficeCollectionViewController alloc] init];
-//    MovieListLoader *movieListLoader = [[MovieListLoader alloc] initWithDelegate:vc];
-//    NSURL *url = [movieListLoader boxOfficeURL];
-//    NSURLSessionDataTask *dataTask = [self.session
-//                                      dataTaskWithURL:url
-//                                      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//                                          XCTAssertNil(error, @"Got an error: %@", error);
-//                                          NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
-//                                          XCTAssertEqual(httpResp.statusCode, 200, @"Didn't get the expected 200 status.");
-//                                          NSArray *movies = [movieListLoader
-//                                                             interpretBoxOfficeMoviesFromData:data withkey:@"movies"];
-//                                          XCTAssertEqual(movies.count, 50, @"The wrong number of movies was returned.");
-//                                          Movie *movie = movies.firstObject;
-//                                          XCTAssertEqualObjects(movie.name, @"American Sniper", @"The first movie has the wrong name.");
-//                                          XCTAssertEqualObjects(movie.imagePath,
-//                                                                @"http://content8.flixster.com/movie/11/18/08/11180834_tmb.jpg",
-//                                                                @"The first movie has the wrong imagePath.");
-//                                          XCTAssertEqualObjects(movie.urlPath,
-//                                                                @"http://api.rottentomatoes.com/api/public/v1.0/movies/771357000.json",
-//                                                                @"The first movie has the wrong urlPath.");
-//                                          XCTAssertEqual(movie.runtime, 134, @"The first movie has the wrong value for its runtime.");
-//                                          XCTAssertEqual(movie.year, 2015, @"The first movie has the wrong release year.");
-//                                          XCTAssertEqualObjects(movie.rating, @"R", @"The first movie has the wrong MPAA rating.");
-//                                          XCTAssertEqualObjects(movie.synopsis, AmericanSniperSynopsis, @"The first movie has the wrong synopsis.");
-//                                          movie = movies.lastObject;
-//                                          XCTAssertEqualObjects(movie.name, @"Citizenfour", @"The last movie has the wrong name.");
-//                                          done = YES;
-//                                      }];
-//    [dataTask resume];
-//    
-//    ILGAssertBlockReturnsYesBeforeTimeout(^{ return done; },
-//                                          TimeoutInterval,
-//                                          @"Call failed to return quickly enough.");
-//}
+
+- (void)testDownloadBoxOfficeList
+{
+    
+
+    BOOL __block done = NO;
+    BoxOfficeCollectionViewController *vc = [[BoxOfficeCollectionViewController alloc] init];
+    MovieListLoader *movieListLoader = [[MovieListLoader alloc] initWithDelegate:vc];
+    
+    NSURLSessionDataTask *dataTask = [self.session
+                                      dataTaskWithURL:[NSURL URLWithString:BoxOfficeURL]
+                                      completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                          XCTAssertNil(error, @"Got an error: %@", error);
+                                          NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
+                                          XCTAssertEqual(httpResp.statusCode, 200, @"Didn't get the expected 200 status.");
+                                          NSArray *movies = [movieListLoader
+                                                             interpretBoxOfficeMoviesFromData:data withkey:@"movies"];
+                                          XCTAssertEqual(movies.count, 50, @"The wrong number of movies was returned.");
+                                          Movie *movie = movies.firstObject;
+                                          XCTAssertEqualObjects(movie.name, @"American Sniper", @"The first movie has the wrong name.");
+                                          XCTAssertEqualObjects(movie.imagePath,
+                                                                @"http://content8.flixster.com/movie/11/18/08/11180834_tmb.jpg",
+                                                                @"The first movie has the wrong imagePath.");
+                                          XCTAssertEqualObjects(movie.urlPath,
+                                                                @"http://api.rottentomatoes.com/api/public/v1.0/movies/771357000.json",
+                                                                @"The first movie has the wrong urlPath.");
+                                          XCTAssertEqual(movie.runtime, 134, @"The first movie has the wrong value for its runtime.");
+                                          XCTAssertEqual(movie.year, 2015, @"The first movie has the wrong release year.");
+                                          XCTAssertEqualObjects(movie.rating, @"R", @"The first movie has the wrong MPAA rating.");
+                                          XCTAssertEqualObjects(movie.synopsis, AmericanSniperSynopsis, @"The first movie has the wrong synopsis.");
+                                          movie = movies.lastObject;
+                                          XCTAssertEqualObjects(movie.name, @"Citizenfour", @"The last movie has the wrong name.");
+                                          done = YES;
+                                      }];
+    [dataTask resume];
+    
+    ILGAssertBlockReturnsYesBeforeTimeout(^{ return done; },
+                                          TimeoutInterval,
+                                          @"Call failed to return quickly enough.");
+}
 // Commented out because test inconsistently succeeds or fails.  When it fails, the error says that the image has 0 pixels.
 //- (void)testImageDownload
 //{

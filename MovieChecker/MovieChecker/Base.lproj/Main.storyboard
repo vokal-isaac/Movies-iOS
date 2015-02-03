@@ -265,6 +265,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Movie Details" id="oIt-db-jbV"/>
                     <connections>
+                        <outlet property="detailCell" destination="OOB-xg-vax" id="pDU-N5-YiL"/>
                         <outlet property="movieTitleLabel" destination="ueE-Zm-wsz" id="SNz-tB-qYs"/>
                         <outlet property="ratingLabel" destination="iiJ-6B-4vA" id="ZRN-nO-CPF"/>
                         <outlet property="synopsisLabel" destination="jSr-nk-voR" id="6AJ-sw-Hwu"/>
@@ -273,7 +274,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtb-0P-caw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="410"/>
+            <point key="canvasLocation" x="752" y="410"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

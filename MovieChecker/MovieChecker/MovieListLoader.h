@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, weak) id <MovieListDelegate> delegate;
 
+- (NSArray *)interpretBoxOfficeMoviesFromData:(NSData *)data withkey:(NSString *)key;
 - (id)initWithDelegate:(id)delegate;
 - (void)fetchMovies;
 
