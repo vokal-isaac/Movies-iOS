@@ -9,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - ILGAsserts (~> 1.0)
+  - ILGHttpConstants (~> 1.0)
   - SDWebImage (~> 3.7)
   - VOKMockUrlProtocol (~> 1.0)
 

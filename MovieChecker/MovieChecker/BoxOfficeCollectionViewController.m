@@ -89,7 +89,7 @@
 
 #pragma mark <MovieListDelegate>
 
-- (void)movieListLoader:(id<MovieListDelegate> *)movieListLoader didLoadMovies:(NSArray *)movies;
+- (void)movieListLoader:(MovieListLoader *)movieListLoader didLoadMovies:(NSArray *)movies;
 {
     self.movies = movies;
     [self.collectionView reloadData];

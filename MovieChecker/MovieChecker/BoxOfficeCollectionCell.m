@@ -20,14 +20,13 @@
 
 - (void)displayMovie:(Movie *)movie
 {
-    
-    BoxOfficeCollectionCell *myself = self;
+    typeof(self) __weak weakSelf = self;
     [self.thumbnailImageView sd_setImageWithURL:[NSURL URLWithString:movie.imagePath]
                                       completed:^(UIImage *image,
                                                   NSError *error,
                                                   SDImageCacheType cacheType,
                                                   NSURL *imageURL) {
-                                          myself.thumbnailImageView.image = image;
+                                          weakSelf.thumbnailImageView.image = image;
     }];
 }
 

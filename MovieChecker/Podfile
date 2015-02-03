@@ -1,5 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'SDWebImage', '~> 3.7'
+pod 'ILGHttpConstants', '~> 1.0'
 target :MovieCheckerTests, :exclusive => true do
     pod 'ILGAsserts', '~> 1.0'
     pod 'VOKMockUrlProtocol', '~> 1.0'

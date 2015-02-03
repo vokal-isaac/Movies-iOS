@@ -265,10 +265,10 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Movie Details" id="oIt-db-jbV"/>
                     <connections>
-                        <outlet property="movieTitle" destination="ueE-Zm-wsz" id="zoo-ZG-79X"/>
-                        <outlet property="rating" destination="iiJ-6B-4vA" id="yIq-nL-HSJ"/>
-                        <outlet property="synopsis" destination="jSr-nk-voR" id="BpJ-Cu-3pZ"/>
-                        <outlet property="year" destination="Qmh-Mz-rGr" id="1ES-bf-oCq"/>
+                        <outlet property="movieTitleLabel" destination="ueE-Zm-wsz" id="SNz-tB-qYs"/>
+                        <outlet property="ratingLabel" destination="iiJ-6B-4vA" id="ZRN-nO-CPF"/>
+                        <outlet property="synopsisLabel" destination="jSr-nk-voR" id="6AJ-sw-Hwu"/>
+                        <outlet property="yearLabel" destination="Qmh-Mz-rGr" id="VKZ-MI-TI0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtb-0P-caw" userLabel="First Responder" sceneMemberID="firstResponder"/>
