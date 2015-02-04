@@ -18,10 +18,9 @@
 		E46B8A2D1A7158F6001372EE /* BoxOfficeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2C1A7158F6001372EE /* BoxOfficeTableCell.m */; };
 		E46B8A301A715A9E001372EE /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A2F1A715A9E001372EE /* Movie.m */; };
 		E46B8A331A715F51001372EE /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A321A715F51001372EE /* MovieDetailViewController.m */; };
-		E46B8A3B1A716AC7001372EE /* RottenTomatoesHelperMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = E46B8A3A1A716AC7001372EE /* RottenTomatoesHelperMethods.m */; };
 		E4D25EB91A77FB5700C21065 /* BoxOfficeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */; };
 		E4D25EBC1A78156600C21065 /* BoxOfficeCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25EBB1A78156600C21065 /* BoxOfficeCollectionCell.m */; };
-		E4D25EBF1A781E1C00C21065 /* MovieList.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25EBE1A781E1C00C21065 /* MovieList.m */; };
+		E4D25EBF1A781E1C00C21065 /* MovieListLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D25EBE1A781E1C00C21065 /* MovieListLoader.m */; };
 		E4E376451A7AA0E0006606F7 /* VOKMockData in Resources */ = {isa = PBXBuildFile; fileRef = E4E376441A7AA0E0006606F7 /* VOKMockData */; };
 /* End PBXBuildFile section */
 
@@ -58,14 +57,12 @@
 		E46B8A2F1A715A9E001372EE /* Movie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		E46B8A311A715F51001372EE /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
 		E46B8A321A715F51001372EE /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
-		E46B8A391A716AC7001372EE /* RottenTomatoesHelperMethods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RottenTomatoesHelperMethods.h; sourceTree = "<group>"; };
-		E46B8A3A1A716AC7001372EE /* RottenTomatoesHelperMethods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RottenTomatoesHelperMethods.m; sourceTree = "<group>"; };
 		E4D25EB71A77FB5700C21065 /* BoxOfficeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeCollectionViewController.h; sourceTree = "<group>"; };
 		E4D25EB81A77FB5700C21065 /* BoxOfficeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeCollectionViewController.m; sourceTree = "<group>"; };
 		E4D25EBA1A78156600C21065 /* BoxOfficeCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BoxOfficeCollectionCell.h; sourceTree = "<group>"; };
 		E4D25EBB1A78156600C21065 /* BoxOfficeCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoxOfficeCollectionCell.m; sourceTree = "<group>"; };
-		E4D25EBD1A781E1C00C21065 /* MovieList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieList.h; sourceTree = "<group>"; };
-		E4D25EBE1A781E1C00C21065 /* MovieList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieList.m; sourceTree = "<group>"; };
+		E4D25EBD1A781E1C00C21065 /* MovieListLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieListLoader.h; sourceTree = "<group>"; };
+		E4D25EBE1A781E1C00C21065 /* MovieListLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieListLoader.m; sourceTree = "<group>"; };
 		E4E376441A7AA0E0006606F7 /* VOKMockData */ = {isa = PBXFileReference; lastKnownFileType = folder; path = VOKMockData; sourceTree = "<group>"; };
 		ED4BB5D8D256FFD1D2091861 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,8 +123,6 @@
 			children = (
 				E46B8A2E1A715A9E001372EE /* Movie.h */,
 				E46B8A2F1A715A9E001372EE /* Movie.m */,
-				E4D25EBD1A781E1C00C21065 /* MovieList.h */,
-				E4D25EBE1A781E1C00C21065 /* MovieList.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -148,6 +143,8 @@
 			children = (
 				E44F2C3A1A70144D00D22A9A /* AppDelegate.h */,
 				E44F2C3B1A70144D00D22A9A /* AppDelegate.m */,
+				E4D25EBD1A781E1C00C21065 /* MovieListLoader.h */,
+				E4D25EBE1A781E1C00C21065 /* MovieListLoader.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -179,7 +176,6 @@
 				E4317E4B1A79788300B330C1 /* Cells */,
 				E4317E4C1A7978D500B330C1 /* Controller */,
 				E4317E4A1A79787B00B330C1 /* Model */,
-				E46B8A3C1A716AD4001372EE /* Rotten Tomatoes API Interaction */,
 				E4317E491A79786A00B330C1 /* View Controllers */,
 				E44F2C401A70144D00D22A9A /* Main.storyboard */,
 				E44F2C431A70144D00D22A9A /* Images.xcassets */,
@@ -213,15 +209,6 @@
 				E44F2C511A70144D00D22A9A /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E46B8A3C1A716AD4001372EE /* Rotten Tomatoes API Interaction */ = {
-			isa = PBXGroup;
-			children = (
-				E46B8A391A716AC7001372EE /* RottenTomatoesHelperMethods.h */,
-				E46B8A3A1A716AC7001372EE /* RottenTomatoesHelperMethods.m */,
-			);
-			name = "Rotten Tomatoes API Interaction";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,12 +394,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E46B8A3B1A716AC7001372EE /* RottenTomatoesHelperMethods.m in Sources */,
 				E46B8A331A715F51001372EE /* MovieDetailViewController.m in Sources */,
 				E44F2C3C1A70144D00D22A9A /* AppDelegate.m in Sources */,
 				E46B8A301A715A9E001372EE /* Movie.m in Sources */,
 				E44F2C391A70144D00D22A9A /* main.m in Sources */,
-				E4D25EBF1A781E1C00C21065 /* MovieList.m in Sources */,
+				E4D25EBF1A781E1C00C21065 /* MovieListLoader.m in Sources */,
 				E4D25EB91A77FB5700C21065 /* BoxOfficeCollectionViewController.m in Sources */,
 				E46B8A2D1A7158F6001372EE /* BoxOfficeTableCell.m in Sources */,
 				E4D25EBC1A78156600C21065 /* BoxOfficeCollectionCell.m in Sources */,

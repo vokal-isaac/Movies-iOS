@@ -12,6 +12,6 @@
 
 @interface MovieDetailViewController : UITableViewController
 
-@property (nonatomic, weak) Movie *movie;
+@property (nonatomic, strong) Movie *movie;
 
 @end

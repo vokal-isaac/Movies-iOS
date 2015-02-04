@@ -1,5 +1,5 @@
 //
-//  MovieList.h
+//  MovieListLoader.h
 //  MovieChecker
 //
 //  Created by Joseph Goldberg on 1/27/15.
@@ -8,17 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
+@class MovieListLoader;
+
 @protocol MovieListDelegate <NSObject>
 
-- (void)synchMoviesWithArray:(NSArray *)movies;
+- (void)movieListLoader:(MovieListLoader *)movieListLoader didLoadMovies:(NSArray *)movies;
 
 @end
 
-@interface MovieList : NSObject
+@interface MovieListLoader : NSObject
+
 
 @property (nonatomic, strong) NSArray *movies;
 @property (nonatomic, weak) id <MovieListDelegate> delegate;
 
+- (NSArray *)interpretBoxOfficeMoviesFromData:(NSData *)data withkey:(NSString *)key;
 - (id)initWithDelegate:(id)delegate;
+- (void)fetchMovies;
 
 @end

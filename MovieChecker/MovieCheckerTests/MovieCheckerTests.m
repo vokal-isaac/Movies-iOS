@@ -20,10 +20,9 @@
 
 // Models
 #import "Movie.h"
-#import "MovieList.h"
+#import "MovieListLoader.h"
 
 // Other
-#import "RottenTomatoesHelperMethods.h"
 
 @interface MovieCheckerTests : XCTestCase
 
@@ -33,24 +32,9 @@
 
 static NSTimeInterval const TimeoutInterval = 10.0;  // 10 seconds
 static NSString const *AmericanSniperSynopsis = @"From director Clint Eastwood comes \"American Sniper,\" starring Bradley Cooper as Chris Kyle, the most lethal sniper in U.S. military history. But there was much more to this true American hero than his skill with a rifle. U.S. Navy SEAL sniper Chris Kyle is sent to Iraq with only one mission: to protect his brothers-in-arms. His pinpoint accuracy saves countless lives on the battlefield and, as stories of his courageous exploits spread, he earns the nickname \"Legend.\" However, his reputation is also growing behind enemy lines, putting a price on his head and making him a prime target of insurgents. Despite the danger, as well as the toll on his family at home, Chris serves through four harrowing tours of duty in Iraq, becoming emblematic of the SEAL creed to \"leave no man behind.\" But upon returning home, Chris finds that it is the war he can't leave behind. (C) Warner Bros";
+static NSString *BoxOfficeURL = @"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?limit=50&apikey=jw64knjg769gnmd2zs35ttz6";
 
 @implementation MovieCheckerTests
-
-+ (void)setUp
-{
-    [super setUp];
-    
-    // Register the mock URL protocol class, so that all calls will be mocked, rather than hitting a remote server.
-    [NSURLProtocol registerClass:[VOKMockUrlProtocol class]];
-}
-
-+ (void)tearDown
-{
-    // Un-register the mock URL protocol class.
-    [NSURLProtocol unregisterClass:[VOKMockUrlProtocol class]];
-    
-    [super tearDown];
-}
 
 - (void)setUp
 {
@@ -66,15 +50,19 @@ static NSString const *AmericanSniperSynopsis = @"From director Clint Eastwood c
 
 - (void)testDownloadBoxOfficeList
 {
+    
+
     BOOL __block done = NO;
-    NSURL *url = [RottenTomatoesHelperMethods boxOfficeURL];
+    BoxOfficeCollectionViewController *vc = [[BoxOfficeCollectionViewController alloc] init];
+    MovieListLoader *movieListLoader = [[MovieListLoader alloc] initWithDelegate:vc];
+    
     NSURLSessionDataTask *dataTask = [self.session
-                                      dataTaskWithURL:url
+                                      dataTaskWithURL:[NSURL URLWithString:BoxOfficeURL]
                                       completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                           XCTAssertNil(error, @"Got an error: %@", error);
                                           NSHTTPURLResponse *httpResp = (NSHTTPURLResponse *)response;
                                           XCTAssertEqual(httpResp.statusCode, 200, @"Didn't get the expected 200 status.");
-                                          NSArray *movies = [RottenTomatoesHelperMethods
+                                          NSArray *movies = [movieListLoader
                                                              interpretBoxOfficeMoviesFromData:data withkey:@"movies"];
                                           XCTAssertEqual(movies.count, 50, @"The wrong number of movies was returned.");
                                           Movie *movie = movies.firstObject;

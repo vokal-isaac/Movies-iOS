@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Movie.h"
+
 @interface BoxOfficeCollectionCell : UICollectionViewCell
 
-- (void)setThumbnailImageFromURL:(NSURL *)url;
+- (void)displayMovie:(Movie *)movie;
 
 @end

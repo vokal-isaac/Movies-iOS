@@ -6,6 +6,12 @@
 // project.
 
 
+// ILGHttpConstants
+#define COCOAPODS_POD_AVAILABLE_ILGHttpConstants
+#define COCOAPODS_VERSION_MAJOR_ILGHttpConstants 1
+#define COCOAPODS_VERSION_MINOR_ILGHttpConstants 0
+#define COCOAPODS_VERSION_PATCH_ILGHttpConstants 0
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3

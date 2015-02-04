@@ -19,19 +19,17 @@
 
 @implementation BoxOfficeTableCell
 
-- (void)setThumbnailImageFromURL:(NSURL *)url
+- (void)displayMovie:(Movie *)movie
 {
-    [self.thumbnailImageView sd_setImageWithURL:url completed:^(UIImage *image,
-                                                                NSError *error,
-                                                                SDImageCacheType cacheType,
-                                                                NSURL *imageURL) {
-        self.thumbnailImageView.image = image;
-    }];
+    [super displayMovie:movie];
+    self.nameLabel.text = movie.name;
 }
 
-- (void)setName:(NSString *)name
+- (void)awakeFromNib
 {
-    self.nameLabel.text = name;
+    [super awakeFromNib];
+    self.contentView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.contentView.translatesAutoresizingMaskIntoConstraints = YES;
 }
 
 @end

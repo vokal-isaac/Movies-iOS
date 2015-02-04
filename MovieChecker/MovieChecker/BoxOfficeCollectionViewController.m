@@ -11,7 +11,7 @@
 #import "MovieDetailViewController.h"
 
 #import "Movie.h"
-#import "MovieList.h"
+#import "MovieListLoader.h"
 
 #import "BoxOfficeCollectionCell.h"
 #import "BoxOfficeTableCell.h"
@@ -25,7 +25,7 @@
 
 @interface BoxOfficeCollectionViewController ()
 
-@property (nonatomic, strong) MovieList *movieList;
+@property (nonatomic, strong) MovieListLoader *movieListLoader;
 @property (nonatomic, weak) NSArray *movies;
 @property (nonatomic, assign) BOOL isGrid;
 
@@ -37,7 +37,10 @@
 {
     [super viewDidLoad];
     self.isGrid = YES;
-    self.movieList = [[MovieList alloc] initWithDelegate:self];
+    self.collectionView.backgroundColor = [UIColor grayColor];
+    self.collectionView.translatesAutoresizingMaskIntoConstraints = NO;
+    self.movieListLoader = [[MovieListLoader alloc] initWithDelegate:self];
+    [self.movieListLoader fetchMovies];
 }
 
 #pragma mark - Navigation
@@ -48,7 +51,7 @@
         NSIndexPath *path = [self.collectionView indexPathForCell:sender];
         Movie *movie = self.movies[path.row];
         MovieDetailViewController *detailViewController = segue.destinationViewController;
-        [detailViewController setMovie:movie];
+        detailViewController.movie = movie;
     }
     
 }
@@ -71,17 +74,15 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     Movie *movie = self.movies[indexPath.row];
-    NSURL *url = [NSURL URLWithString:movie.imagePath];
     if (self.isGrid) {
         BoxOfficeCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeCollectionCell class])
-                                                                                      forIndexPath:indexPath];
-        [cell setThumbnailImageFromURL:url];
+                                                                                  forIndexPath:indexPath];
+        [cell displayMovie:movie];
         return cell;
     } else {
-        // TODO: Finish Handling for nongrid
         BoxOfficeTableCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([BoxOfficeTableCell class]) forIndexPath:indexPath];
-        [cell setName:movie.name];
-        [cell setThumbnailImageFromURL:url];
+        cell.backgroundColor = [UIColor whiteColor];
+        [cell displayMovie:movie];
         return cell;
     }
     
@@ -89,7 +90,7 @@
 
 #pragma mark <MovieListDelegate>
 
-- (void)synchMoviesWithArray:(NSArray *)movies
+- (void)movieListLoader:(MovieListLoader *)movieListLoader didLoadMovies:(NSArray *)movies;
 {
     self.movies = movies;
     [self.collectionView reloadData];
@@ -102,9 +103,10 @@
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if (self.isGrid) {
+        
         return CGSizeMake(54.0f, 80.0f);
     } else {
-        return CGSizeMake(320.0f, 44.0f);
+        return CGSizeMake(320.0f, 100.0f);
     }
     
 }
@@ -116,7 +118,6 @@ referenceSizeForHeaderInSection:(NSInteger)section
     if (self.isGrid ) {
         return CGSizeZero;
     } else {
-        // TODO: Value for nongrid
         return CGSizeZero;
     }
 }
@@ -128,7 +129,6 @@ referenceSizeForFooterInSection:(NSInteger)section
     if (self.isGrid ) {
         return CGSizeZero;
     } else {
-        // TODO: Value for nongrid
         return CGSizeZero;
     }
 }
@@ -140,7 +140,7 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
     if (self.isGrid) {
         return 10.0f;
     } else {
-        return 1.0;
+        return 1.0f;
     }
 }
 
@@ -151,7 +151,6 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     if (self.isGrid) {
         return 10.0f;
     } else {
-        // TODO: Value for nongrid
         return 0.0;
     }
 }
@@ -163,7 +162,6 @@ minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
     if (self.isGrid) {
         return UIEdgeInsetsMake(7.0f, 7.0f, 7.0f, 7.0f);
     } else {
-        // TODO: Value for nongrid
         return UIEdgeInsetsZero;
     }
     
