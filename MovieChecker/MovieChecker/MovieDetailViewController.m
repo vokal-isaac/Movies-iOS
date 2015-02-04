@@ -32,6 +32,22 @@
     [self.synopsisLabel sizeToFit];
     [self.detailCell sizeToFit];
     
+    
+}
+
+ - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:17];
+    if (indexPath.section == 1) {
+        NSString *str = self.movie.synopsis;
+        CGSize maximumSize = CGSizeMake(300, MAXFLOAT);
+        CGRect strSize = [str boundingRectWithSize:maximumSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil];
+        
+        return (ceil(strSize.size.height)+20);
+    } else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
 }
 
 @end
